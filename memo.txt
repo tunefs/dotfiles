@@ -1,0 +1,11 @@
+FiraCode
+  https://github.com/tonsky/FiraCode.git
+
+Solarized
+  https://github.com/tomislav/osx-terminal.app-colors-solarized 
+
+vim-solarized8
+  https://github.com/lifepillar/vim-solarized8.git
+
+zsh-ineractive-cd
+  https://github.com/changyuheng/zsh-interactive-cd.git

@@ -1,0 +1,4 @@
+set modem type none
+set carrier-watch off
+set flow-control none
+set parity none
