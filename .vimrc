@@ -67,6 +67,9 @@ else
   set viminfo^=!
 endif
 
+" let g:solarized_termcolors = 256
+" let g:solarized_degrade = 1
+let g:solarized_termtrans = 1
 colorscheme solarized
 filetype plugin indent on
 syntax enable
@@ -121,6 +124,7 @@ let g:lightline = {
   \ 'subseparator': {'left': '', 'right': ''}
   \ }
 let g:previm_open_cmd = 'open -a Safari'
+" let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
   \'a'       : '#h',
   \'win'     : '#I #W#F',
