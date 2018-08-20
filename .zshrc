@@ -120,28 +120,12 @@ bindkey -M viins '^N' down-line-or-history
 bindkey -M viins '^P' up-line-or-history
 bindkey -M viins '^Y' yank
 bindkey -M viins '^_' copy-prev-word
-#autoload history-search-end
-#zle -N history-beginning-search-backward-end history-search-end
-#zle -N history-beginning-search-forward-end history-search-end
-#bindkey "^[P" history-beginning-search-backward-end
-#bindkey "^[p" history-beginning-search-backward-end
-#bindkey "^[N" history-beginning-search-forward-end
-#bindkey "^[n" history-beginning-search-forward-end
 
-#zmodload zsh/deltochar
-#bindkey "^[z" delete-to-char
-
-#source ~/.zsh/zaw/zaw.zsh
-#bindkey "^x^b" zaw
-#bindkey "^xb" zaw-cdr
-#bindkey "^x^r" zaw-history
 zstyle ':filter-select:highlight' selected bg=white
 zstyle ':filter-select:highlight' matched fg=yellow,standout
 zstyle ':filter-select' case-insensitive yes
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# source ~/projects/private/enhancd/init.sh
-# source ~/projects/private/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
 autoload -Uz anyframe-init
 anyframe-init
 bindkey '^xb' anyframe-widget-cdr
@@ -151,36 +135,9 @@ bindkey '^x^f' anyframe-widget-insert-filename
 bindkey '^xr' anyframe-widget-execute-history
 bindkey '^x^r' anyframe-widget-execute-history
 
-mcd() {
-	mkdir $1 && chdir $1
-}
-
-ftpane() {
-	local panes current_window current_pane target target_window target_pane
-	panes=$(tmux list-panes -s -F '#I:#P - #{pane_current_path} #{pane_current_command}')
-	current_pane=$(tmux display-message -p '#I:#P')
-	current_window=$(tmux display-message -p '#I')
-	target=$(echo "$panes" | grep -v "$current_pane" | fzf +m --reverse) || return
-	target_window=$(echo $target | awk 'BEGIN{FS=":|-"} {print$1}')
-	target_pane=$(echo $target | awk 'BEGIN{FS=":|-"} {print$2}' | cut -c 1)
-	if [[ $current_window -eq $target_window ]]; then
-		tmux select-pane -t ${target_window}.${target_pane}
-	else
-		tmux select-pane -t ${target_window}.${target_pane} &&
-			tmux select-window -t $target_window
-	fi
-}
-
 function _my_clear_screen() {
 	echo -n "\033[999;1H\033[2J"
 	zle reset-prompt
 }
 zle -N my_clear_screen _my_clear_screen
 bindkey "^L" my_clear_screen
-
-app() {
-	apppath=`find /Applications -maxdepth 3 -type d | grep '\.app$' | sed 's/\/Applications\///' | sed 's/\.app$//' | fzf --prompt="App> " --exit-0`
-	if [ -n "$apppath" ]; then
-		open -a "/Applications/$apppath.app"
-	fi
-}
