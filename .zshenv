@@ -1,7 +1,5 @@
 export CLICOLOR=1
 export EDITOR=vi
-#export ENHANCD_FILTER="fzf-tmux -d 50%"
-export ENHANCD_USE_FUZZY_MATCH=0
 #export FZF_CTRL_R_OPTS='--sort'
 #export FZF_DEFAULT_OPTS="--cycle --no-mouse --color=dark --inline-info"
 #export FZF_DEFAULT_OPTS="--cycle --no-mouse --inline-info \
