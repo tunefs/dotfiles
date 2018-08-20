@@ -1,4 +1,4 @@
-set main-view = id date author:email-user commit-title:graph=yes,refs=yes
+set main-view = id date author:email-user,width=15 commit-title:yes,graph,refs,overflow=no
 bind generic g move-first-line
 bind generic <Ctrl-f> scroll-page-down
 bind generic <Ctrl-b> scroll-page-up

@@ -35,31 +35,22 @@ set noundofile
 set nowritebackup
 set nrformats-=octal
 set number
-" set previewheight=20
-" set pumheight=10
 set ruler
 set scrolloff=1
 set shiftwidth=8
 set showmatch
-" set showtabline=2
 set sidescrolloff=5
 set smartcase
 set smartindent
 set smarttab
 set tabstop=8
-" set tabpagemax=50
 set ttyfast
-" set timeout
-" set timeoutlen=1000
-" set ttimeout
-" set ttimeoutlen=100
 set updatetime=500
 set wildmenu
 set wildmode=list:longest
 if has("nvim")
   set clipboard+=unnamedplus
   set inccommand=split
-  " set termguicolors
 else
   set clipboard=unnamed,autoselect
   set ttymouse=xterm2
@@ -67,8 +58,6 @@ else
   set viminfo^=!
 endif
 
-" let g:solarized_termcolors = 256
-" let g:solarized_degrade = 1
 let g:solarized_termtrans = 1
 colorscheme solarized
 filetype plugin indent on
@@ -96,11 +85,8 @@ call plug#end()
 
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
-" let g:fzf_launcher = "In_a_new_term_function3 %s"
 " let g:fzf_layout = {'window': 'tabnew'}
 let g:fzf_buffers_jump = 1
-" let g:gitgutter_sign_modified = '*'
-" let g:gitgutter_sign_modified_removed = '**'
 let g:gitgutter_terminal_reports_focus = 0
 " let g:indent_guides_start_level = 2
 " let g:indent_guides_color_change_percent = 2
@@ -229,8 +215,5 @@ augroup vimrc-auto-cursorline
   autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
   autocmd CursorHold,CursorHoldI * setlocal cursorline
 augroup END
-
-" highlight CursorLineNr cterm=bold ctermfg=130 ctermbg=7 gui=bold guifg=#cb4b16
-" highlight CursorLine cterm=underline ctermbg=NONE gui=underline guibg=NONE
 
 " vi:et:sw=2
