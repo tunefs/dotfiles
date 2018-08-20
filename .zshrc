@@ -47,14 +47,15 @@ alias c='pygmentize -O encoding=utf-8 -f console256 -g'
 alias df='df -H'
 alias dirs='dirs -v'
 alias e4='expand -t 4'
-alias gst='vi `git rev-parse --show-toplevel`/.git/index'
 alias gg='say finished'
+alias gst='vi `git rev-parse --show-toplevel`/.git/index'
 alias h=history
 alias hgst='hg st `hg root`'
 alias j='jobs -l'
 alias l=less
 alias rgrep='grep -r --exclude="*.svn*"'
 #alias s=screen
+alias tig='tig --all'
 alias today='date +"%Y-%m-%d"'
 alias xd='LC_ALL=C hexdump -C'
 alias -g E4='| expand -t 4'
@@ -84,12 +85,13 @@ case `uname` in
 	alias zzz='osascript -e "tell application \"System Events\" to sleep"'
 	;;
     Linux|NetBSD)
+	eval $(gdircolors ~/projects/private/dircolors-solarized/dircolors.ansi-universal)
 	alias e='emacsclient -n'
 	alias ee='emacsclient -nw'
-	alias ll='ls -lF'
-	alias lll='ls -lFL'
-	alias ls='ls -F'
-	alias sl='ls -F'
+	alias ll='ls -lF --color=auto'
+	alias lll='ls -lFL --color=auto'
+	alias ls='ls -F --color=auto'
+	alias sl='ls -F --color=auto'
 	;;
 esac
 
