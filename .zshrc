@@ -85,7 +85,7 @@ case `uname` in
 	alias zzz='osascript -e "tell application \"System Events\" to sleep"'
 	;;
     Linux|NetBSD)
-	eval $(gdircolors ~/projects/private/dircolors-solarized/dircolors.ansi-universal)
+	eval $(dircolors ~/projects/private/dircolors-solarized/dircolors.ansi-universal)
 	alias e='emacsclient -n'
 	alias ee='emacsclient -nw'
 	alias ll='ls -lF --color=auto'
