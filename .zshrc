@@ -1,8 +1,8 @@
 umask 022
 
 function zle-line-init zle-keymap-select {
-	VIM_NORMAL="%F{4}[%30<...<%~%<<]%f"
-	VIM_INSERT="%F{2}[%30<...<%~%<<]%f"
+	VIM_NORMAL="%F{2}[%30<...<%~%<<]%f"
+	VIM_INSERT="%F{4}[%30<...<%~%<<]%f"
 	PROMPT="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}%B%#%b "
 	zle reset-prompt
 }
@@ -42,8 +42,8 @@ setopt NO_PROMPT_CR
 
 alias a=alias
 alias back='cd -'
-#alias c='echo -n "\033[999;1H\033[2J"'
-alias c='pygmentize -O encoding=utf-8 -f console256 -g'
+# alias c='echo -n "\033[999;1H\033[2J"'
+# alias c='pygmentize -O encoding=utf-8 -f console256 -g'
 alias df='df -H'
 alias dirs='dirs -v'
 alias e4='expand -t 4'
@@ -55,7 +55,7 @@ alias j='jobs -l'
 alias l=less
 alias rgrep='grep -r --exclude="*.svn*"'
 #alias s=screen
-alias tig='tig --all'
+# alias tig='tig --all'
 alias today='date +"%Y-%m-%d"'
 alias xd='LC_ALL=C hexdump -C'
 alias -g E4='| expand -t 4'
@@ -71,10 +71,8 @@ alias -g V='| view -'
 alias -g W='| wc -l'
 case `uname` in
     Darwin)
-	eval $(gdircolors ~/projects/private/dircolors-solarized/dircolors.ansi-universal)
-	alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
-	alias ee='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw'
-	alias em='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+	eval $(gdircolors ~/projects/private/dircolors-solarized/dircolors.ansi-dark)
+	alias nvr='"$HOME"/.pyenv/versions/`pyenv global`/bin/nvr --remote-silent'
 	alias ll='gls -lF --color=auto'
 	alias lll='gls -lFL --color=auto'
 	alias ls='gls -F --color=auto'
@@ -85,9 +83,7 @@ case `uname` in
 	alias zzz='osascript -e "tell application \"System Events\" to sleep"'
 	;;
     Linux|NetBSD)
-	eval $(dircolors ~/projects/private/dircolors-solarized/dircolors.ansi-universal)
-	alias e='emacsclient -n'
-	alias ee='emacsclient -nw'
+	eval $(dircolors ~/projects/private/dircolors-solarized/dircolors.ansi-dark)
 	alias ll='ls -lF --color=auto'
 	alias lll='ls -lFL --color=auto'
 	alias ls='ls -F --color=auto'
@@ -143,3 +139,18 @@ function _my_clear_screen() {
 }
 zle -N my_clear_screen _my_clear_screen
 bindkey "^L" my_clear_screen
+
+# function powerline_precmd() {
+# 	PS1="$(powerline-shell --shell zsh $?)"
+# }
+# function install_powerline_precmd() {
+# 	for s in "${precmd_functions[@]}"; do
+# 		if [ "$s" = "powerline_precmd" ]; then
+# 			return
+# 		fi
+# 	done
+# 	precmd_functions+=(powerline_precmd)
+# }
+# if [ "$TERM" != "linux" ]; then
+# 	install_powerline_precmd
+# fi

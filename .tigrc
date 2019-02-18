@@ -1,4 +1,10 @@
+set diff-highlight = true
 set main-view = id date author:email-user,width=15 commit-title:yes,graph,refs,overflow=no
+set split-view-height = 80%
+set vertical-split = no
 bind generic g move-first-line
 bind generic <Ctrl-f> scroll-page-down
 bind generic <Ctrl-b> scroll-page-up
+color cursor black green bold
+color title-focus black blue bold
+color title-blur black blue
