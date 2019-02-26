@@ -1,4 +1,4 @@
-set diff-highlight = true
+# set diff-highlight = true
 set main-view = id date author:email-user,width=15 commit-title:yes,graph,refs,overflow=no
 set split-view-height = 80%
 set vertical-split = no

@@ -76,6 +76,7 @@ endif
 " let g:material_theme_style = 'palenight'
 " colorscheme material
 let g:neodark#solid_vertsplit = 1
+let g:neodark#terminal_transparent = 1
 " let g:neodark#use_custom_terminal_theme = 1
 colorscheme neodark
 filetype plugin indent on
@@ -96,6 +97,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'joshdick/onedark.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'aklt/plantuml-syntax'
 Plug 'kannokanno/previm'
 Plug 'tpope/vim-rhubarb'
 Plug 'godlygeek/tabular'
@@ -242,6 +244,8 @@ autocmd InsertLeave * set nopaste
 " autocmd QuickfixCmdPost make,vimgrep cwindow
 if has("nvim")
   autocmd TermOpen * startinsert
+  highlight Normal guibg=none
+  highlight NonText guibg=none
 endif
 
 command! -bang -nargs=* Ag

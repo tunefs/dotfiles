@@ -32,4 +32,4 @@ case `uname` in
 #	PATH=$PATH:/Applications/UpTeX.app/teTeX/bin:$HOME/local/android-sdk-macosx/tools:$HOME/local/android-sdk-macosx/platform-tools
 	;;
 esac
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/Volumes/crosstoolsng/x-tools/arm-cortexa9_neon-linux-gnueabihf/bin

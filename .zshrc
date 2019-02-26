@@ -17,7 +17,7 @@ READNULLCMD=less
 SAVEHIST=1000000
 WORDCHARS=${WORDCHARS//[\-\/.]}
 
-fpath=($HOME/projects/private/anyframe(N-/) $fpath)
+fpath=($HOME/.ghq/github.com/mollifier/anyframe(N-/) $fpath)
 
 unlimit
 
@@ -45,45 +45,35 @@ alias back='cd -'
 # alias c='echo -n "\033[999;1H\033[2J"'
 # alias c='pygmentize -O encoding=utf-8 -f console256 -g'
 alias df='df -H'
-alias dirs='dirs -v'
-alias e4='expand -t 4'
-alias gg='say finished'
-alias gst='vi `git rev-parse --show-toplevel`/.git/index'
+alias gcd='cd $(ghq root)/$(ghq list | fzf)'
 alias h=history
-alias hgst='hg st `hg root`'
 alias j='jobs -l'
 alias l=less
-alias rgrep='grep -r --exclude="*.svn*"'
 #alias s=screen
 # alias tig='tig --all'
-alias today='date +"%Y-%m-%d"'
 alias xd='LC_ALL=C hexdump -C'
-alias -g E4='| expand -t 4'
 alias -g F='| fzf-tmux'
-alias -g FE='2>&1 | fzf-tmux'
 alias -g G='| grep'
 alias -g H='| head'
 alias -g L='| less'
 alias -g LE='2>&1 | less'
-alias -g LV='| lv'
 alias -g T='| tail'
 alias -g V='| view -'
 alias -g W='| wc -l'
 case `uname` in
     Darwin)
-	eval $(gdircolors ~/projects/private/dircolors-solarized/dircolors.ansi-dark)
+	eval $(gdircolors ~/.ghq/github.com/seebi/dircolors-solarized/dircolors.ansi-dark)
 	alias nvr='"$HOME"/.pyenv/versions/`pyenv global`/bin/nvr --remote-silent'
 	alias ll='gls -lF --color=auto'
 	alias lll='gls -lFL --color=auto'
 	alias ls='gls -F --color=auto'
 	alias o='open'
-	alias oa='open -a'
 	alias sl='gls -F --color=auto'
 	alias top='top -o cpu'
 	alias zzz='osascript -e "tell application \"System Events\" to sleep"'
 	;;
     Linux|NetBSD)
-	eval $(dircolors ~/projects/private/dircolors-solarized/dircolors.ansi-dark)
+	eval $(gdircolors ~/.ghq/github.com/seebi/dircolors-solarized/dircolors.ansi-dark)
 	alias ll='ls -lF --color=auto'
 	alias lll='ls -lFL --color=auto'
 	alias ls='ls -F --color=auto'
@@ -139,18 +129,3 @@ function _my_clear_screen() {
 }
 zle -N my_clear_screen _my_clear_screen
 bindkey "^L" my_clear_screen
-
-# function powerline_precmd() {
-# 	PS1="$(powerline-shell --shell zsh $?)"
-# }
-# function install_powerline_precmd() {
-# 	for s in "${precmd_functions[@]}"; do
-# 		if [ "$s" = "powerline_precmd" ]; then
-# 			return
-# 		fi
-# 	done
-# 	precmd_functions+=(powerline_precmd)
-# }
-# if [ "$TERM" != "linux" ]; then
-# 	install_powerline_precmd
-# fi
