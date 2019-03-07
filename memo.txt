@@ -14,4 +14,5 @@ vim-solarized8
 
 zsh-ineractive-cd
   https://github.com/changyuheng/zsh-interactive-cd.git
+
 https://github.com/seebi/dircolors-solarized

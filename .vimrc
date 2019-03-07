@@ -91,18 +91,18 @@ Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 " Plug 'davidhalter/jedi-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'kaicataldo/material.vim'
+" Plug 'kaicataldo/material.vim'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim'
 Plug 'tyru/open-browser.vim'
-Plug 'NLKNguyen/papercolor-theme'
+" Plug 'NLKNguyen/papercolor-theme'
 Plug 'aklt/plantuml-syntax'
 Plug 'kannokanno/previm'
 Plug 'tpope/vim-rhubarb'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
-Plug 'jacoborus/tender.vim'
+" Plug 'jacoborus/tender.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
@@ -125,7 +125,7 @@ let g:fzf_buffers_jump = 1
 let g:gitgutter_terminal_reports_focus = 0
 " let g:indent_guides_start_level = 2
 " let g:indent_guides_color_change_percent = 2
-" let g:indent_guides_guide_size = 1
+let g:indent_guides_guide_size = 1
 let g:loaded_matchparen = 1
 let g:lightline = {
   \ 'colorscheme': 'neodark',
@@ -257,6 +257,7 @@ command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 command -nargs=1 MD call system('open '.shellescape('dict://'.<q-args>))
 command -nargs=0 MDW call system('open '.shellescape('dict://'.shellescape(expand('<cword>'))))
+command T4 set shiftwidth=4 expandtab
 
 " augroup vimrc-auto-cursorline
 "   autocmd!

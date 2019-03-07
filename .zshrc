@@ -45,7 +45,7 @@ alias back='cd -'
 # alias c='echo -n "\033[999;1H\033[2J"'
 # alias c='pygmentize -O encoding=utf-8 -f console256 -g'
 alias df='df -H'
-alias gcd='cd $(ghq root)/$(ghq list | fzf)'
+alias g='gcd'
 alias h=history
 alias j='jobs -l'
 alias l=less
@@ -129,3 +129,10 @@ function _my_clear_screen() {
 }
 zle -N my_clear_screen _my_clear_screen
 bindkey "^L" my_clear_screen
+
+function gcd() {
+	local dir=`ghq list | fzf`
+	if [ ! -z $dir ]; then
+		cd `ghq root`/$dir
+	fi
+}
