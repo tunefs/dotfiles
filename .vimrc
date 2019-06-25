@@ -117,6 +117,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 call plug#end()
 
+let mapleader = "\<Space>"
 let g:ackprg = 'ag --vimgrep'
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
@@ -148,14 +149,13 @@ let g:previm_open_cmd = 'open -a Safari'
 let g:tagbar_sort = 0
 let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
-  \'a'       : '#h',
   \'win'     : '#I #W#F',
   \'cwin'    : '#I #W#F',
   \'x'       : ['#(free)', '#(ssid)'],
-  \'y'       : '%H:%M',
-  \'z'       : '%Y-%m-%d',
+  \'y'       : '%m-%d',
+  \'z'       : '%H:%M',
   \'options' : {'status-justify' : 'left'}}
-let g:tmuxline_theme = 'vim_statusline_1'
+let g:tmuxline_theme = 'jellybeans'
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 0
 
