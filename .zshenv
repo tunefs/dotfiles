@@ -14,7 +14,7 @@ export LC_CTYPE=en_US.UTF-8
 #export LC_MONETARY=C
 #export LC_NUMERIC=C
 #export LC_TIME=C
-export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+# export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 export LESS=FiMQRsX
 export LESSCHARSET=utf-8
 #export LESSOPEN="|pygmentize -O encoding=utf-8 -f console256 -g %s"

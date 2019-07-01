@@ -50,7 +50,7 @@ alias h=history
 alias j='jobs -l'
 alias l=less
 #alias s=screen
-# alias tig='tig --all'
+alias tig='tig --all'
 alias xd='LC_ALL=C hexdump -C'
 alias -g F='| fzf-tmux'
 alias -g G='| grep'
@@ -136,3 +136,12 @@ function gcd() {
 		cd `ghq root`/$dir
 	fi
 }
+
+function my-quick-fg () {
+	if [ $(jobs -s | wc -l) -gt 0 ]; then
+		BUFFER="fg"
+		zle accept-line
+	fi
+}
+zle -N my-quick-fg
+bindkey '^Z' my-quick-fg

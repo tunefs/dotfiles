@@ -119,8 +119,8 @@ call plug#end()
 
 let mapleader = "\<Space>"
 let g:ackprg = 'ag --vimgrep'
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_smartcase = 1
+" let g:EasyMotion_do_mapping = 0
+" let g:EasyMotion_smartcase = 1
 " let g:fzf_layout = {'window': 'tabnew'}
 let g:fzf_buffers_jump = 1
 let g:gitgutter_terminal_reports_focus = 0
@@ -151,8 +151,7 @@ let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
   \'win'     : '#I #W#F',
   \'cwin'    : '#I #W#F',
-  \'x'       : ['#(free)', '#(ssid)'],
-  \'y'       : '%m-%d',
+  \'y'       : '%Y-%m-%d',
   \'z'       : '%H:%M',
   \'options' : {'status-justify' : 'left'}}
 let g:tmuxline_theme = 'jellybeans'
