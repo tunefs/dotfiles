@@ -7,9 +7,9 @@ export FZF_DEFAULT_OPTS="--cycle --no-mouse --inline-info --color=dark"
 #  --color info:108,prompt:109,spinner:108,pointer:168,marker:168"
 export FZF_TMUX=1
 # export FZF_TMUX_HEIGHT="50%"
-#unset LANG
+export LANG=en_US.UTF-8
 #export LC_COLLATE=C
-export LC_CTYPE=en_US.UTF-8
+#export LC_CTYPE=en_US.UTF-8
 #export LC_MESSAGES=C
 #export LC_MONETARY=C
 #export LC_NUMERIC=C
