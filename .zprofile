@@ -5,4 +5,4 @@ if [ -d "${PYENV_ROOT}" ]; then
 	eval "$(pyenv init -)"
 fi
 
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
