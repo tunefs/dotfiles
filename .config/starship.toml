@@ -1,0 +1,16 @@
+add_newline = false
+
+#[git_branch]
+#symbol = "🌱 "
+
+# [python]
+# pyenv_version_name = true
+# disabled = true
+
+# [line_break]
+# disabled = true
+
+[memory_usage]
+disabled = false
+show_percentage = true
+threshold = -1
