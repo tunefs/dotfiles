@@ -225,10 +225,10 @@ imap <2-MiddleMouse> <Nop>
 imap <3-MiddleMouse> <Nop>
 imap <4-MiddleMouse> <Nop>
 
-nmap <Leader>s <Plug>(easymotion-overwin-f2)
-xmap <Leader>s <Plug>(easymotion-bd-f2)
-nmap K <Plug>(easymotion-overwin-line)
-xmap K <Plug>(easymotion-bd-jk)
+" nmap <Leader><Leader>s <Plug>(easymotion-s)
+" xmap <Leader>s <Plug>(easymotion-bd-f2)
+" nmap K <Plug>(easymotion-overwin-line)
+" xmap K <Plug>(easymotion-bd-jk)
 
 nnoremap <silent> <Leader>f :<C-u>NERDTreeToggle<CR>
 nnoremap <silent> <Leader>F :<C-u>NERDTreeFind<CR>

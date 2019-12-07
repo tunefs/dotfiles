@@ -19,6 +19,7 @@ export LESS=FiMQRsX
 export LESSCHARSET=utf-8
 #export LESSOPEN="|pygmentize -O encoding=utf-8 -f console256 -g %s"
 # export LESSOPEN='| ${HOME}/bin/src-hilite-lesspipe.sh %s'
+export MOSH_ESCAPE_KEY='~'
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 export PAGER=less
 if [ x"$EMACS" != x ]; then

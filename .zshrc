@@ -1,13 +1,13 @@
 umask 022
 
-function zle-line-init zle-keymap-select {
-	VIM_NORMAL="%F{2}[%30<...<%~%<<]%f"
-	VIM_INSERT="%F{4}[%30<...<%~%<<]%f"
-	PROMPT="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}%B%#%b "
-	zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+# function zle-line-init zle-keymap-select {
+# 	VIM_NORMAL="%F{2}[%30<...<%~%<<]%f"
+# 	VIM_INSERT="%F{4}[%30<...<%~%<<]%f"
+# 	PROMPT="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}%B%#%b "
+# 	zle reset-prompt
+# }
+# zle -N zle-line-init
+# zle -N zle-keymap-select
 
 CDPATH=.:$HOME
 HISTFILE=$HOME/.zshhist
@@ -49,6 +49,7 @@ alias g='gcd'
 alias h=history
 alias j='jobs -l'
 alias l=less
+alias lg=lazygit
 #alias s=screen
 alias tig='tig --all'
 alias xd='LC_ALL=C hexdump -C'
@@ -145,3 +146,5 @@ function my-quick-fg () {
 }
 zle -N my-quick-fg
 bindkey '^Z' my-quick-fg
+
+eval "$(starship init zsh)"
