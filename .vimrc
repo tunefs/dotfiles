@@ -85,36 +85,26 @@ syntax enable
 call plug#begin('~/.vim/plugged')
 Plug 'mileszs/ack.vim'
 Plug 'tyru/caw.vim'
-Plug 'koron/codic-vim'
 Plug 'itchyny/dictionary.vim'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
-" Plug 'davidhalter/jedi-vim'
 Plug 'itchyny/lightline.vim'
-" Plug 'kaicataldo/material.vim'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'scrooloose/nerdtree'
-" Plug 'joshdick/onedark.vim'
 Plug 'tyru/open-browser.vim'
-" Plug 'NLKNguyen/papercolor-theme'
 Plug 'aklt/plantuml-syntax'
 Plug 'kannokanno/previm'
 Plug 'tpope/vim-rhubarb'
-Plug 'godlygeek/tabular'
-Plug 'majutsushi/tagbar'
-" Plug 'jacoborus/tender.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-emoji'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'plasticboy/vim-markdown'
-" Plug 'lambdalisue/vim-pyenv'
-Plug 't9md/vim-quickhl'
 Plug 'lifepillar/vim-solarized8'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 call plug#end()
 
 let mapleader = "\<Space>"
@@ -124,12 +114,9 @@ let g:ackprg = 'ag --vimgrep'
 " let g:fzf_layout = {'window': 'tabnew'}
 let g:fzf_buffers_jump = 1
 let g:gitgutter_terminal_reports_focus = 0
-" let g:indent_guides_start_level = 2
-" let g:indent_guides_color_change_percent = 2
-let g:indent_guides_guide_size = 1
 let g:loaded_matchparen = 1
 let g:lightline = {
-  \ 'colorscheme': 'neodark',
+  \ 'colorscheme': 'selenized_dark',
   \ 'active': {'left': [['mode', 'paste'],
   \                     ['readonly', 'fugitive', 'filename', 'modified']],
   \            'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]},
@@ -142,19 +129,22 @@ let g:lightline = {
   \   'modified': 'LightLineModified',
   \   'fugitive': 'LightLineFugitive'
   \ },
+  \ 'separator': {'left': '', 'right': ''},
+  \ 'subseparator': {'left': '', 'right': ''},
+  \ 'tabline': {'right': []},
   \ }
+let g:lsp_diagnostics_enabled = 0
 let NERDTreeQuitOnOpen = 1
 let g:netrw_nogx = 1
 let g:previm_open_cmd = 'open -a Safari'
-let g:tagbar_sort = 0
-let g:tmuxline_powerline_separators = 0
+" let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
   \'win'     : '#I #W#F',
   \'cwin'    : '#I #W#F',
   \'y'       : '%Y-%m-%d',
   \'z'       : '%H:%M',
   \'options' : {'status-justify' : 'left'}}
-let g:tmuxline_theme = 'jellybeans'
+let g:tmuxline_theme = 'nightly_fox'
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 0
 
@@ -204,10 +194,6 @@ nnoremap <silent> <Leader>g :<C-u>GFiles<CR>
 nnoremap <silent> <Leader>G :<C-u>GFiles?<CR>
 nmap <Leader>c <Plug>(caw:hatpos:toggle)
 vmap <Leader>c <Plug>(caw:hatpos:toggle)
-nmap <Leader>m <Plug>(quickhl-manual-this)
-xmap <Leader>m <Plug>(quickhl-manual-this)
-nmap <Leader>M <Plug>(quickhl-manual-reset)
-xmap <Leader>M <Plug>(quickhl-manual-reset)
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
@@ -259,21 +245,32 @@ command -nargs=1 MD call system('open '.shellescape('dict://'.<q-args>))
 command -nargs=0 MDW call system('open '.shellescape('dict://'.shellescape(expand('<cword>'))))
 command T4 set shiftwidth=4 expandtab
 
+if executable('clangd')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'clangd',
+    \ 'cmd': {server_info->['clangd', '-background-index']},
+    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+    \ })
+endif
+
+function! s:on_lsp_buffer_enabled() abort
+  setlocal omnifunc=lsp#complete
+  " setlocal signcolumn=yes
+  nmap <buffer> <C-]> <plug>(lsp-definition)
+  nmap <buffer> gd <plug>(lsp-definition)
+  nmap <buffer> <Leader><Leader>r <plug>(lsp-references)
+  " nmap <buffer> <f2> <plug>(lsp-rename)
+endfunction
+
+augroup lsp_install
+  au!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
 " augroup vimrc-auto-cursorline
 "   autocmd!
 "   autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
 "   autocmd CursorHold,CursorHoldI * setlocal cursorline
 " augroup END
-
-" if jedi#init_python()
-"   function! s:jedi_auto_force_py_version() abort
-"     let g:jedi#force_py_version = pyenv#python#get_internal_major_version()
-"   endfunction
-"   augroup vim-pyenv-custom-augroup
-"     autocmd! *
-"     autocmd User vim-pyenv-activate-post   call s:jedi_auto_force_py_version()
-"     autocmd User vim-pyenv-deactivate-post call s:jedi_auto_force_py_version()
-"   augroup END
-" endif
 
 " vi:et:sw=2
