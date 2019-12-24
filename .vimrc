@@ -22,6 +22,7 @@ set ignorecase
 set incsearch
 set laststatus=2
 set lazyredraw
+set listchars=eol:␍,tab:␉\ ,trail:∙
 set matchtime=3
 set modeline
 set modelines=5
@@ -83,28 +84,31 @@ filetype plugin indent on
 syntax enable
 
 call plug#begin('~/.vim/plugged')
-Plug 'mileszs/ack.vim'
-Plug 'tyru/caw.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'aklt/plantuml-syntax'
+Plug 'easymotion/vim-easymotion'
+Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/dictionary.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'KeitaNakamura/neodark.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tyru/open-browser.vim'
-Plug 'aklt/plantuml-syntax'
-Plug 'kannokanno/previm'
-Plug 'tpope/vim-rhubarb'
-Plug 'edkolev/tmuxline.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-emoji'
-Plug 'tpope/vim-fugitive'
-Plug 'plasticboy/vim-markdown'
+Plug 'kannokanno/previm'
+Plug 'KeitaNakamura/neodark.vim'
 Plug 'lifepillar/vim-solarized8'
-Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'mileszs/ack.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'tyru/caw.vim'
+Plug 'tyru/open-browser.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 let mapleader = "\<Space>"
@@ -218,7 +222,6 @@ imap <4-MiddleMouse> <Nop>
 
 nnoremap <silent> <Leader>f :<C-u>NERDTreeToggle<CR>
 nnoremap <silent> <Leader>F :<C-u>NERDTreeFind<CR>
-nnoremap <silent> <Leader>t :<C-u>TagbarToggle<CR>
 
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 autocmd FileType * set formatoptions-=o formatoptions-=r
@@ -230,6 +233,7 @@ autocmd InsertLeave * set nopaste
 " autocmd QuickfixCmdPost make,vimgrep cwindow
 if has("nvim")
   autocmd TermOpen * startinsert
+  autocmd TermOpen * setlocal nonumber
   highlight Normal guibg=none
   highlight NonText guibg=none
 endif
