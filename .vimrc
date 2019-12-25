@@ -22,7 +22,7 @@ set ignorecase
 set incsearch
 set laststatus=2
 set lazyredraw
-set listchars=eol:␍,tab:␉\ ,trail:∙
+set listchars=eol:↲,tab:↳₋,space:∙,trail:␣
 set matchtime=3
 set modeline
 set modelines=5
@@ -118,7 +118,6 @@ let g:ackprg = 'ag --vimgrep'
 " let g:fzf_layout = {'window': 'tabnew'}
 let g:fzf_buffers_jump = 1
 let g:gitgutter_terminal_reports_focus = 0
-let g:loaded_matchparen = 1
 let g:lightline = {
   \ 'colorscheme': 'selenized_dark',
   \ 'active': {'left': [['mode', 'paste'],
@@ -137,7 +136,9 @@ let g:lightline = {
   \ 'subseparator': {'left': '', 'right': ''},
   \ 'tabline': {'right': []},
   \ }
+let g:loaded_matchparen = 1
 let g:lsp_diagnostics_enabled = 0
+let g:lsp_text_edit_enabled = 0
 let NERDTreeQuitOnOpen = 1
 let g:netrw_nogx = 1
 let g:previm_open_cmd = 'open -a Safari'
@@ -215,11 +216,6 @@ imap <2-MiddleMouse> <Nop>
 imap <3-MiddleMouse> <Nop>
 imap <4-MiddleMouse> <Nop>
 
-" nmap <Leader><Leader>s <Plug>(easymotion-s)
-" xmap <Leader>s <Plug>(easymotion-bd-f2)
-" nmap K <Plug>(easymotion-overwin-line)
-" xmap K <Plug>(easymotion-bd-jk)
-
 nnoremap <silent> <Leader>f :<C-u>NERDTreeToggle<CR>
 nnoremap <silent> <Leader>F :<C-u>NERDTreeFind<CR>
 
@@ -234,9 +230,12 @@ autocmd InsertLeave * set nopaste
 if has("nvim")
   autocmd TermOpen * startinsert
   autocmd TermOpen * setlocal nonumber
-  highlight Normal guibg=none
-  highlight NonText guibg=none
+  highlight Whitespace guifg=#475C69
+else
+  highlight SpecialKey guifg=#475C69
 endif
+highlight Normal guibg=NONE
+highlight NonText guifg=#475C69
 
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
@@ -256,16 +255,12 @@ if executable('clangd')
     \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
     \ })
 endif
-
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
-  " setlocal signcolumn=yes
   nmap <buffer> <C-]> <plug>(lsp-definition)
   nmap <buffer> gd <plug>(lsp-definition)
   nmap <buffer> <Leader><Leader>r <plug>(lsp-references)
-  " nmap <buffer> <f2> <plug>(lsp-rename)
 endfunction
-
 augroup lsp_install
   au!
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
