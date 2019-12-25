@@ -138,15 +138,17 @@ let g:lightline = {
   \ }
 let g:loaded_matchparen = 1
 let g:lsp_diagnostics_enabled = 0
+" let g:lsp_insert_text_enabled = 0
 let g:lsp_text_edit_enabled = 0
 let NERDTreeQuitOnOpen = 1
 let g:netrw_nogx = 1
 let g:previm_open_cmd = 'open -a Safari'
 " let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
+  \'a'       : '#h',
   \'win'     : '#I #W#F',
   \'cwin'    : '#I #W#F',
-  \'y'       : '%Y-%m-%d',
+  \'y'       : ['%Y-%m-%d', '%Z', '%A'],
   \'z'       : '%H:%M',
   \'options' : {'status-justify' : 'left'}}
 let g:tmuxline_theme = 'nightly_fox'
