@@ -143,6 +143,7 @@ let g:lsp_text_edit_enabled = 0
 let NERDTreeQuitOnOpen = 1
 let g:netrw_nogx = 1
 let g:previm_open_cmd = 'open -a Safari'
+let g:surround_no_insert_mappings = 1
 " let g:tmuxline_powerline_separators = 0
 let g:tmuxline_preset = {
   \'a'       : '#h',
