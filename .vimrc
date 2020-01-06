@@ -96,6 +96,7 @@ Plug 'junegunn/vim-emoji'
 Plug 'kannokanno/previm'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'lifepillar/vim-solarized8'
+Plug 'liuchengxu/vista.vim'
 Plug 'mileszs/ack.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -114,7 +115,7 @@ call plug#end()
 let mapleader = "\<Space>"
 let g:ackprg = 'ag --vimgrep'
 " let g:EasyMotion_do_mapping = 0
-" let g:EasyMotion_smartcase = 1
+" let g:EasyMotion_smartcase = 2
 " let g:fzf_layout = {'window': 'tabnew'}
 let g:fzf_buffers_jump = 1
 let g:gitgutter_terminal_reports_focus = 0
@@ -149,12 +150,24 @@ let g:tmuxline_preset = {
   \'a'       : '#h',
   \'win'     : '#I #W#F',
   \'cwin'    : '#I #W#F',
-  \'y'       : ['%Y-%m-%d', '%Z', '%A'],
-  \'z'       : '%H:%M',
+  \'z'       : '#(TZ=UTC date)',
   \'options' : {'status-justify' : 'left'}}
 let g:tmuxline_theme = 'nightly_fox'
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 0
+let g:vista_executive_for = {
+  \ 'cpp': 'vim_lsp',
+  \ }
+" let g:vista#renderer#enable_icon = 0
+let g:vista#renderer#icons = {
+  \ "method": "🔸",
+  \ "function": "🔸",
+  \ "enum": "🔸",
+  \ "field": "🔸",
+  \ "namespace": "🔸",
+  \ "variable": "🔸",
+  \ "class": "🔸"
+  \ }
 
 function! LightLineReadonly()
   if &filetype == 'help'
@@ -189,10 +202,10 @@ function! LightLineFugitive()
   endif
 endfunction
 
-inoremap <silent> <C-g> <ESC>
-cnoremap <silent> <C-g> <C-c>
-cnoremap <silent> <C-y> <C-g>
-vnoremap <silent> <C-g> <C-c>
+inoremap <C-g> <ESC>
+cnoremap <C-g> <C-c>
+cnoremap <C-y> <C-g>
+vnoremap <C-g> <C-c>
 nnoremap <silent> <ESC>u :<C-u>nohlsearch<CR>
 nnoremap <silent> <M-u> :<C-u>nohlsearch<CR>
 nnoremap <silent> <C-n> :<C-u>nohlsearch<CR>
@@ -262,7 +275,9 @@ function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   nmap <buffer> <C-]> <plug>(lsp-definition)
   nmap <buffer> gd <plug>(lsp-definition)
+  nmap <buffer> <Leader><Leader>h <plug>(lsp-hover)
   nmap <buffer> <Leader><Leader>r <plug>(lsp-references)
+  nmap <buffer> <silent> <Leader><Leader>v :Vista!!<CR>
 endfunction
 augroup lsp_install
   au!
