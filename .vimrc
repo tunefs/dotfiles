@@ -150,7 +150,7 @@ let g:tmuxline_preset = {
   \'a'       : '#h',
   \'win'     : '#I #W#F',
   \'cwin'    : '#I #W#F',
-  \'z'       : '#(TZ=UTC date)',
+  \'z'       : '#(utcdate)',
   \'options' : {'status-justify' : 'left'}}
 let g:tmuxline_theme = 'nightly_fox'
 let g:vim_markdown_folding_disabled = 1
