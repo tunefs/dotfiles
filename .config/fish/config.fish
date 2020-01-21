@@ -6,5 +6,7 @@ eval (pyenv init - | source)
 alias g=gcd
 alias j=jobs
 alias l=less
+alias tig='tig --all'
+alias xd='hexdump -C'
 
 starship init fish | source
