@@ -6,6 +6,8 @@ eval (pyenv init - | source)
 alias g=gcd
 alias j=jobs
 alias l=less
+alias lg=lazygit
+alias M='history merge'
 alias tig='tig --all'
 alias xd='hexdump -C'
 
