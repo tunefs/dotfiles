@@ -8,7 +8,12 @@ alias j=jobs
 alias l=less
 alias lg=lazygit
 alias M='history merge'
+alias tenki=wego
 alias tig='tig --all'
 alias xd='hexdump -C'
+
+function my_command_not_found --on-event fish_command_not_found
+    figlet "command not found"
+end
 
 starship init fish | source

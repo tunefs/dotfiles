@@ -79,13 +79,15 @@ endif
 let g:neodark#solid_vertsplit = 1
 let g:neodark#terminal_transparent = 1
 " let g:neodark#use_custom_terminal_theme = 1
-colorscheme neodark
+" colorscheme neodark
+colorscheme nord
 filetype plugin indent on
 syntax enable
 
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'aklt/plantuml-syntax'
+Plug 'arcticicestudio/nord-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/dictionary.vim'
@@ -120,7 +122,7 @@ let g:ackprg = 'ag --vimgrep'
 let g:fzf_buffers_jump = 1
 let g:gitgutter_terminal_reports_focus = 0
 let g:lightline = {
-  \ 'colorscheme': 'selenized_dark',
+  \ 'colorscheme': 'nord',
   \ 'active': {'left': [['mode', 'paste'],
   \                     ['readonly', 'fugitive', 'filename', 'modified']],
   \            'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]},

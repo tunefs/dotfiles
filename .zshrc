@@ -63,7 +63,7 @@ alias -g V='| view -'
 alias -g W='| wc -l'
 case `uname` in
     Darwin)
-	eval $(gdircolors ~/.ghq/github.com/seebi/dircolors-solarized/dircolors.ansi-dark)
+	eval $(gdircolors ~/.ghq/github.com/arcticicestudio/nord-dircolors/src/dir_colors)
 	alias nvr='"$HOME"/.pyenv/versions/`pyenv global`/bin/nvr --remote-silent'
 	alias ll='gls -lF --color=auto'
 	alias lll='gls -lFL --color=auto'
@@ -74,7 +74,7 @@ case `uname` in
 	alias zzz='osascript -e "tell application \"System Events\" to sleep"'
 	;;
     Linux|NetBSD)
-	eval $(gdircolors ~/.ghq/github.com/seebi/dircolors-solarized/dircolors.ansi-dark)
+	eval $(gdircolors ~/.ghq/github.com/arcticicestudio/nord-dircolors/src/dir_colors)
 	alias ll='ls -lF --color=auto'
 	alias lll='ls -lFL --color=auto'
 	alias ls='ls -F --color=auto'

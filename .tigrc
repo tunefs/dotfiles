@@ -8,8 +8,8 @@ bind generic g move-first-line
 bind generic G move-last-line
 bind generic <Ctrl-f> scroll-page-down
 bind generic <Ctrl-b> scroll-page-up
-color cursor black green bold
-color title-focus black blue bold
-color title-blur black blue
+#color cursor black green bold
+#color title-focus black blue bold
+#color title-blur black blue
 color diff-add-highlight black green
 color diff-del-highlight black red
