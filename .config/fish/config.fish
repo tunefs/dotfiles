@@ -13,7 +13,9 @@ alias tig='tig --all'
 alias xd='hexdump -C'
 
 function my_command_not_found --on-event fish_command_not_found
-    figlet "command not found"
+    if type figlet > /dev/null 2>&1
+        figlet -f starwars "Bad command or file name"
+    end
 end
 
 starship init fish | source
