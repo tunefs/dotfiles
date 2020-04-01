@@ -1,17 +1,54 @@
 add_newline = false
 
+[aws]
+symbol = " "
+
+[battery]
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
+
 [[battery.display]]
 threshold = 100
 style = "bold red"
 
-# [python]
-# pyenv_version_name = true
-# disabled = true
+[conda]
+symbol = " "
 
-# [line_break]
-# disabled = true
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
 
 [memory_usage]
+symbol = " "
 disabled = false
 show_percentage = true
 threshold = -1
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+# pyenv_version_name = true
+# disabled = true
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
