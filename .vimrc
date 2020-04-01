@@ -105,6 +105,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'tyru/caw.vim'
@@ -186,7 +187,7 @@ function! LightLineModified()
     return ''
   elseif &modified
     " return emoji#for('boom')
-    return '*'
+    return ' '
   elseif &modifiable
     return ''
   else
