@@ -12,6 +12,11 @@ discharging_symbol = ""
 threshold = 100
 style = "bold red"
 
+[character]
+symbol = ""
+error_symbol = "✗"
+use_symbol_for_status = true
+
 [conda]
 symbol = " "
 
