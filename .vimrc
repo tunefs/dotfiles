@@ -196,9 +196,9 @@ endfunction
 function! LightLineFugitive()
   if &filetype == 'help'
     return ''
-  elseif exists('*fugitive#statusline')
-    let status = fugitive#statusline()
-    return status !=# '' ? ''.' '.status : ''
+  elseif exists('*FugitiveHead')
+    let branch = FugitiveHead()
+    return branch !=# '' ? ' '.branch : ''
   else
     return ''
   endif
