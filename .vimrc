@@ -89,7 +89,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'aklt/plantuml-syntax'
 Plug 'arcticicestudio/nord-vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/dictionary.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
@@ -130,14 +129,14 @@ let g:lightline = {
   \ 'inactive': {'left': [['mode', 'paste'],
   \                       ['readonly', 'fugitive', 'filename', 'modified']],
   \              'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]},
-  \ 'component': {'lineinfo': ' %3l:%-2v'},
+  \ 'component': {'lineinfo': '%3l:%-2v'},
   \ 'component_function': {
   \   'readonly': 'LightLineReadonly',
   \   'modified': 'LightLineModified',
   \   'fugitive': 'LightLineFugitive'
   \ },
-  \ 'separator': {'left': '', 'right': ''},
-  \ 'subseparator': {'left': '', 'right': ''},
+  \ 'separator': {'left': '', 'right': ''},
+  \ 'subseparator': {'left': '', 'right': ''},
   \ 'tabline': {'right': []},
   \ }
 let g:loaded_matchparen = 1
@@ -148,14 +147,6 @@ let NERDTreeQuitOnOpen = 1
 let g:netrw_nogx = 1
 let g:previm_open_cmd = 'open -a Safari'
 let g:surround_no_insert_mappings = 1
-" let g:tmuxline_powerline_separators = 0
-let g:tmuxline_preset = {
-  \'a'       : '#h',
-  \'win'     : '#I #W#F',
-  \'cwin'    : '#I #W#F',
-  \'z'       : '#(utcdate)',
-  \'options' : {'status-justify' : 'left'}}
-let g:tmuxline_theme = 'nightly_fox'
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 0
 let g:vista_executive_for = {
