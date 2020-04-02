@@ -136,7 +136,7 @@ let g:lightline = {
   \   'fugitive': 'LightLineFugitive'
   \ },
   \ 'separator': {'left': '', 'right': ''},
-  \ 'subseparator': {'left': '', 'right': ''},
+  \ 'subseparator': {'left': '', 'right': ''},
   \ 'tabline': {'right': []},
   \ }
 let g:loaded_matchparen = 1
