@@ -13,8 +13,8 @@ threshold = 100
 style = "bold red"
 
 [character]
-symbol = ""
-error_symbol = ""
+symbol = " "
+error_symbol = " "
 use_symbol_for_status = true
 
 [cmd_duration]
