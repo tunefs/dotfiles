@@ -153,15 +153,15 @@ let g:vista_executive_for = {
   \ 'cpp': 'vim_lsp',
   \ }
 " let g:vista#renderer#enable_icon = 0
-let g:vista#renderer#icons = {
-  \ "method": "🔸",
-  \ "function": "🔸",
-  \ "enum": "🔸",
-  \ "field": "🔸",
-  \ "namespace": "🔸",
-  \ "variable": "🔸",
-  \ "class": "🔸"
-  \ }
+" let g:vista#renderer#icons = {
+"  \ "method": "🔸",
+"  \ "function": "🔸",
+"  \ "enum": "🔸",
+"  \ "field": "🔸",
+"  \ "namespace": "🔸",
+"  \ "variable": "🔸",
+"  \ "class": "🔸"
+"  \ }
 
 function! LightLineReadonly()
   if &filetype == 'help'
