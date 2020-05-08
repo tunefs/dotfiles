@@ -23,8 +23,12 @@ prefix = "祥"
 [conda]
 symbol = " "
 
+[directory]
+prefix = " "
+#fish_style_pwd_dir_length = 1
+
 [git_branch]
-symbol = " "
+symbol = "  "
 
 [golang]
 symbol = " "
@@ -55,7 +59,7 @@ symbol = " "
 symbol = " "
 
 [python]
-symbol = " "
+symbol = " "
 # pyenv_version_name = true
 # disabled = true
 

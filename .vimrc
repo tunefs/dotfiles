@@ -190,7 +190,7 @@ function! LightLineFugitive()
     return ''
   elseif exists('*FugitiveHead')
     let branch = FugitiveHead()
-    return branch !=# '' ? ' '.branch : ''
+    return branch !=# '' ? '  '.branch : ''
   else
     return ''
   endif
