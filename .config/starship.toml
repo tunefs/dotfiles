@@ -2,6 +2,10 @@ add_newline = false
 
 [aws]
 symbol = " "
+disabled = true
+
+[aws.region_aliases]
+ap-northeast-1 = "東京"
 
 [battery]
 full_symbol = ""

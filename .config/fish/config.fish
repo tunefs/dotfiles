@@ -22,3 +22,4 @@ function my_command_not_found --on-event fish_command_not_found
 end
 
 starship init fish | source
+#source ~/.iterm2_shell_integration.fish
