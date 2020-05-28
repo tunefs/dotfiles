@@ -1,3 +1,4 @@
+export BAT_THEME=Nord
 export CLICOLOR=1
 export EDITOR=vi
 #export FZF_CTRL_R_OPTS='--sort'
