@@ -33,6 +33,22 @@ prefix = " "
 
 [git_branch]
 symbol = "  "
+#truncation_length = 4
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🤷"
+stashed = "📦"
+modified = " "
+staged.value = "++"
+staged.style = "green"
+staged_count.enabled = true
+staged_count.style = "green"
+renamed = "👅"
+deleted = "🗑"
 
 [golang]
 symbol = " "
@@ -50,6 +66,7 @@ symbol = "ﰌ"
 symbol = " "
 disabled = false
 show_percentage = true
+show_swap = true
 threshold = -1
 separator = "/"
 
