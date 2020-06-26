@@ -64,7 +64,7 @@ symbol = " "
 
 [python]
 symbol = " "
-# pyenv_version_name = true
+pyenv_version_name = true
 # disabled = true
 
 [ruby]

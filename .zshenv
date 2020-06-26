@@ -17,7 +17,7 @@ export LANG=en_US.UTF-8
 #export LC_NUMERIC=C
 #export LC_TIME=C
 # export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
-export LESS=FiMQRsX
+export LESS=iMQRsX
 export LESSCHARSET=utf-8
 #export LESSOPEN="|pygmentize -O encoding=utf-8 -f console256 -g %s"
 # export LESSOPEN='| ${HOME}/bin/src-hilite-lesspipe.sh %s'
