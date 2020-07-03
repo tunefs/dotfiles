@@ -91,6 +91,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'itchyny/dictionary.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'JuliaEditorSupport/julia-vim'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-emoji'
