@@ -42,7 +42,7 @@ behind = "😰"
 diverged = "😵"
 untracked = "🤷"
 stashed = "📦"
-modified = " "
+modified = "📝"
 staged.value = "++"
 staged.style = "green"
 staged_count.enabled = true
@@ -60,7 +60,7 @@ symbol = " "
 symbol = " "
 
 [jobs]
-symbol = "ﰌ"
+symbol = "🤚"
 
 [memory_usage]
 symbol = " "

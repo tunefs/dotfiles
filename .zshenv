@@ -2,7 +2,10 @@ export BAT_THEME=Nord
 export CLICOLOR=1
 export EDITOR=vi
 #export FZF_CTRL_R_OPTS='--sort'
-export FZF_DEFAULT_OPTS="--cycle --no-mouse --inline-info --color=dark"
+export FZF_DEFAULT_OPTS='--cycle --no-mouse --inline-info --border
+ --color fg:#D8DEE9,bg:#2E3440,hl:#A3BE8C,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C
+ --color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B'
+
 # export FZF_DEFAULT_OPTS="--cycle --no-mouse \
 #  --color fg:242,hl:65,fg+:15,hl+:108 \
 #  --color info:108,prompt:109,spinner:108,pointer:168,marker:168"
