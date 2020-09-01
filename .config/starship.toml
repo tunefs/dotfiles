@@ -35,6 +35,9 @@ prefix = " "
 symbol = "  "
 #truncation_length = 4
 
+[git_commit]
+only_detached = false
+
 [git_status]
 conflicted = "🏳"
 ahead = "🏎💨"

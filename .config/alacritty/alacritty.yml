@@ -41,17 +41,19 @@ colors:
     cyan: '0x8FBCBB'
     white: '0xECEFF4'
 
-background_opacity: 0.97
+background_opacity: 0.6
 
 shell:
  program: /bin/zsh
  args:
    - --login
 
+#alt_send_esc: true
+
 key_bindings:
   - { key: Key6,   mods: Control,         chars:  "\x1e" }
   - { key: Q,      mods: Control,         chars:  "\x11" }
-  - { key: N,      mods: Command,         action: SpawnNewInstance }
+#   - { key: N,      mods: Command,         action: SpawnNewInstance }
   - { key: A,      mods: Alt,             chars:  "\x1ba" }
   - { key: B,      mods: Alt,             chars:  "\x1bb" }
   - { key: C,      mods: Alt,             chars:  "\x1bc" }
