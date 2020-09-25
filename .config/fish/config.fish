@@ -18,7 +18,7 @@ alias xd='hexdump -C'
 
 function my_command_not_found --on-event fish_command_not_found
     if type figlet > /dev/null 2>&1
-        figlet -f starwars "Bad command or file name"
+        figlet -f cyberlarge "Bad command or file name"
     end
 end
 
