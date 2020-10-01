@@ -22,7 +22,8 @@ set ignorecase
 set incsearch
 set laststatus=2
 set lazyredraw
-set listchars=eol:↲,tab:↳₋,space:∙,trail:␣
+set list
+set listchars=eol:↲,tab:↳\ ,space:∙,trail:␣
 set matchtime=3
 set modeline
 set modelines=5
@@ -65,41 +66,20 @@ if &term == "screen-256color"
   let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 endif
 
-" if &term =~ "screen"
-"   colorscheme solarized8_flat
-" else
-"   " let g:solarized_termcolors = 256
-"   " let g:solarized_termtrans = 1
-"   colorscheme solarized
-" endif
-" let g:solarized_termtrans = 1
-" colorscheme solarized8_flat
-" let g:material_theme_style = 'palenight'
-" colorscheme material
-let g:neodark#solid_vertsplit = 1
-let g:neodark#terminal_transparent = 1
-" let g:neodark#use_custom_terminal_theme = 1
-" colorscheme neodark
-colorscheme nord
-filetype plugin indent on
-syntax enable
-
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'aklt/plantuml-syntax'
 Plug 'arcticicestudio/nord-vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'itchyny/dictionary.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-emoji'
 Plug 'kannokanno/previm'
-Plug 'KeitaNakamura/neodark.vim'
-Plug 'lifepillar/vim-solarized8'
 Plug 'liuchengxu/vista.vim'
 Plug 'mileszs/ack.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'plasticboy/vim-markdown'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
@@ -117,6 +97,14 @@ call plug#end()
 
 let mapleader = "\<Space>"
 let g:ackprg = 'ag --vimgrep'
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:cpp_no_function_highlight = 1
 " let g:EasyMotion_do_mapping = 0
 " let g:EasyMotion_smartcase = 2
 " let g:fzf_layout = {'window': 'tabnew'}
@@ -163,6 +151,10 @@ let g:vista_executive_for = {
 "  \ "variable": "🔸",
 "  \ "class": "🔸"
 "  \ }
+
+colorscheme nord
+filetype plugin indent on
+syntax enable
 
 function! LightLineReadonly()
   if &filetype == 'help'
@@ -232,21 +224,16 @@ nnoremap <silent> <Leader>F :<C-u>NERDTreeFind<CR>
 
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 autocmd FileType * set formatoptions-=o formatoptions-=r
-" autocmd! FileType fzf
-" autocmd FileType fzf set laststatus=0 noshowmode noruler
-"   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 autocmd InsertLeave * set nopaste
-" autocmd InsertLeave * :call system('osascript -e "tell application \"System Events\" to key code 102" &')
-" autocmd QuickfixCmdPost make,vimgrep cwindow
 if has("nvim")
-  autocmd TermOpen * startinsert
+  " autocmd TermOpen * startinsert
   autocmd TermOpen * setlocal nonumber
-  highlight Whitespace guifg=#475C69
+"   highlight Whitespace guifg=#475C69
 else
-  highlight SpecialKey guifg=#475C69
+"   highlight SpecialKey guifg=#475C69
 endif
-highlight Normal guibg=NONE
-highlight NonText guifg=#475C69
+" highlight Normal guibg=NONE
+" highlight NonText guifg=#475C69
 
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
@@ -255,8 +242,6 @@ command! -bang -nargs=* Ag
   \                 <bang>0)
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-command -nargs=1 MD call system('open '.shellescape('dict://'.<q-args>))
-command -nargs=0 MDW call system('open '.shellescape('dict://'.shellescape(expand('<cword>'))))
 command T4 set shiftwidth=4 expandtab
 
 " if executable('clangd')
@@ -278,11 +263,5 @@ augroup lsp_install
   au!
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
-
-" augroup vimrc-auto-cursorline
-"   autocmd!
-"   autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
-"   autocmd CursorHold,CursorHoldI * setlocal cursorline
-" augroup END
 
 " vi:et:sw=2
