@@ -22,13 +22,13 @@ error_symbol = ""
 use_symbol_for_status = true
 
 [cmd_duration]
-prefix = "祥"
+format = "祥[$duration]($style) "
 
 [conda]
 symbol = " "
 
 [directory]
-prefix = " "
+format = "  [$path]($style)[$read_only]($read_only_style) "
 #fish_style_pwd_dir_length = 1
 
 [git_branch]
