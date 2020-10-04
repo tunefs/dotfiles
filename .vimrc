@@ -22,7 +22,7 @@ set ignorecase
 set incsearch
 set laststatus=2
 set lazyredraw
-set list
+" set list
 set listchars=eol:↲,tab:↳\ ,space:∙,trail:␣
 set matchtime=3
 set modeline
