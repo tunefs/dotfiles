@@ -72,7 +72,8 @@ error_symbol = ""
 use_symbol_for_status = true
 
 [cmake]
-symbol = "△ "
+symbol = "⟁ "
+disabled = true
 
 [cmd_duration]
 format = "祥[$duration]($style) "
@@ -137,7 +138,7 @@ symbol = " "
 
 [python]
 symbol = " "
-pyenv_version_name = true
+# pyenv_version_name = true
 # disabled = true
 
 [ruby]
