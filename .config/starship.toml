@@ -58,9 +58,9 @@ disabled = true
 ap-northeast-1 = "東京"
 
 [battery]
-full_symbol = ""
-charging_symbol = " "
-discharging_symbol = " "
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
 
 [[battery.display]]
 threshold = 100
@@ -82,7 +82,7 @@ format = "祥[$duration]($style) "
 symbol = " "
 
 [directory]
-format = "  [$path]($style)[$read_only]($read_only_style) "
+format = "📁[$path]($style)[$read_only]($read_only_style) "
 #fish_style_pwd_dir_length = 1
 
 [git_branch]
