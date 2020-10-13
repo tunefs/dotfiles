@@ -15,6 +15,7 @@ set directory=~/.vim/tmp
 set display+=lastline
 set encoding=utf-8
 set exrc
+set guioptions-=e
 set hidden
 set history=1000
 set hlsearch

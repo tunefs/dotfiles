@@ -10,8 +10,8 @@ set cmdheight=1
 set columns=132
 "set guifont=FiraCodeNerdFontComplet-Retina:h13
 set guifont=FiraCode\ Nerd\ Font:h13
-" set guifontwide=ヒラギノ角ゴシック\ W4:h15
-" set guifontwide=游ゴシック体:h13
+" set guifontwide=Hiragino\ Maru\ Gothic\ ProN:h13
+set guifontwide=YuGothic:h13
 set guioptions-=rL
 set noimdisable
 set lines=60
