@@ -87,7 +87,6 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
@@ -133,7 +132,8 @@ let g:loaded_matchparen = 1
 let g:lsp_diagnostics_enabled = 0
 " let g:lsp_insert_text_enabled = 0
 let g:lsp_text_edit_enabled = 0
-let NERDTreeQuitOnOpen = 1
+let g:netrw_banner=0
+let g:netrw_liststyle=1
 let g:netrw_nogx = 1
 let g:previm_open_cmd = 'open -a Safari'
 let g:surround_no_insert_mappings = 1
@@ -219,9 +219,6 @@ imap <MiddleMouse>   <Nop>
 imap <2-MiddleMouse> <Nop>
 imap <3-MiddleMouse> <Nop>
 imap <4-MiddleMouse> <Nop>
-
-nnoremap <silent> <Leader>f :<C-u>NERDTreeToggle<CR>
-nnoremap <silent> <Leader>F :<C-u>NERDTreeFind<CR>
 
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 autocmd FileType * set formatoptions-=o formatoptions-=r
