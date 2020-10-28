@@ -1,9 +1,6 @@
 syntax enable
-" colorscheme solarized8_flat
-" colorscheme material
-" colorscheme neodark
 colorscheme nord
-" set antialias
+set antialias
 set background=dark
 set blurradius=3
 set cmdheight=1

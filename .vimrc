@@ -46,6 +46,7 @@ set sidescrolloff=5
 set smartcase
 set smartindent
 set smarttab
+set shell=fish
 set tabstop=8
 set termguicolors
 set ttyfast
