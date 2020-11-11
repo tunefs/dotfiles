@@ -13,6 +13,8 @@ set -x PYENV_ROOT $HOME/.pyenv
 set -x PATH $HOME/.bin $HOME/.fzf/bin $HOME/.nodebrew/current/bin $PYENV_ROOT/bin $GOPATH/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /Volumes/crosstoolsng/x-tools/arm-cortexa9_neon-linux-gnueabihf/bin
 eval (pyenv init - | source)
 
+ulimit -S -n 2048
+
 alias b=bcd
 alias g=gcd
 alias j=jobs
