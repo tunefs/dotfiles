@@ -1,0 +1,39 @@
+[alias]
+	d = diff
+	dc = diff --cached
+	l = log
+	lp = log -p
+	ls = ls-files
+	s = status
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	pager = delta
+	precomposeunicode = true
+	quotepath = false
+[credential]
+	helper = store --file /Users/saito/.git-credentials
+[delta]
+	tabs = 0
+	theme = Nord
+[diff]
+	compactionHeuristic = true
+[fetch]
+	prune = true
+[ghq]
+	root = ~/.ghq
+[init]
+	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only
+[pull]
+	rebase = false
+[push]
+	default = simple
+[user]
+	name = Atsunori Saito
+	email = sai@yedo.com
+	#email = atsunori.saito@nileworks.co.jp
+	#email = atsunori.saito@fpvrobotics.com
