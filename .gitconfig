@@ -9,6 +9,8 @@
 	diff = auto
 	status = auto
 	branch = auto
+[commit]
+	gpgsign = true
 [core]
 	pager = delta
 	precomposeunicode = true
@@ -24,6 +26,8 @@
 	prune = true
 [ghq]
 	root = ~/.ghq
+[gpg]
+	program = /usr/local/bin/gpg
 [init]
 	defaultBranch = main
 [interactive]
@@ -37,3 +41,4 @@
 	email = sai@yedo.com
 	#email = atsunori.saito@nileworks.co.jp
 	#email = atsunori.saito@fpvrobotics.com
+	signingkey = 1BD68FE00A98776CB2F1D8568F60FAAE34329E5E
