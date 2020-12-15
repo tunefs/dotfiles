@@ -20,12 +20,12 @@ alias g=gcd
 alias j=jobs
 alias l=less
 alias lg=lazygit
-alias ls=lsd
-alias ll='lsd -l'
+alias ls='lsd -F'
+alias ll='lsd -Fl'
 alias M='history merge'
 alias tenki=wego
 #alias tig='tig --all'
-alias tree='lsd --tree'
+alias tree='lsd -F --tree'
 #alias typora='open -a typora'
 alias xd='hexdump -C'
 
