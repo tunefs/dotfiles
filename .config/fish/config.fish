@@ -1,6 +1,7 @@
 set -x BAT_THEME Nord
 set -x EDITOR vi
-set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border --color fg:#D8DEE9,bg:#2E3440,hl:#A3BE8C,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C --color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B'
+#set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border --color fg:#D8DEE9,bg:#2E3440,hl:#A3BE8C,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C --color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B'
+set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border'
 set -x FZF_TMUX 1
 set -x GOPATH $HOME/.go
 set -x LANG en_US.UTF-8
@@ -10,8 +11,9 @@ set -x NVIM_LISTEN_ADDRESS $HOME/.vim/tmp/nvimsocket
 set -x PAGER less
 set -x PYENV_ROOT $HOME/.pyenv
 
-set -x PATH $HOME/.bin $HOME/.fzf/bin $HOME/.nodebrew/current/bin $PYENV_ROOT/bin $GOPATH/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /Volumes/crosstoolsng/x-tools/arm-cortexa9_neon-linux-gnueabihf/bin
+set -x PATH $HOME/.bin $HOME/.fzf/bin $PYENV_ROOT/bin $GOPATH/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /Applications/ARM/bin
 eval (pyenv init - | source)
+eval (nodenv init - | source)
 
 ulimit -S -n 2048
 

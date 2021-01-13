@@ -125,8 +125,8 @@ let g:lightline = {
   \   'modified': 'LightLineModified',
   \   'fugitive': 'LightLineFugitive'
   \ },
-  \ 'separator': {'left': '', 'right': ''},
-  \ 'subseparator': {'left': '', 'right': ''},
+  \ 'separator': {'left': '', 'right': ''},
+  \ 'subseparator': {'left': '', 'right': ''},
   \ 'tabline': {'right': []},
   \ }
 let g:loaded_matchparen = 1
@@ -136,13 +136,16 @@ let g:lsp_text_edit_enabled = 0
 let g:netrw_banner=0
 let g:netrw_liststyle=1
 let g:netrw_nogx = 1
+let g:netrw_winsize = -32
 let g:previm_open_cmd = 'open -a Safari'
 let g:surround_no_insert_mappings = 1
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 0
-let g:vista_executive_for = {
-  \ 'cpp': 'vim_lsp',
-  \ }
+let g:vista_default_executive = 'vim_lsp'
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+" let g:vista_executive_for = {
+"  \ 'cpp': 'vim_lsp',
+"  \ }
 " let g:vista#renderer#enable_icon = 0
 " let g:vista#renderer#icons = {
 "  \ "method": "🔸",
@@ -231,7 +234,7 @@ if has("nvim")
 else
 "   highlight SpecialKey guifg=#475C69
 endif
-" highlight Normal guibg=NONE
+highlight Normal guibg=NONE
 " highlight NonText guifg=#475C69
 
 command! -bang -nargs=* Ag
@@ -245,11 +248,20 @@ command T4 set shiftwidth=4 expandtab
 
 " if executable('clangd')
 "   au User lsp_setup call lsp#register_server({
-"   \ 'name': 'clangd',
-"   \ 'cmd': {server_info->['clangd', '--background-index', '--compile-commands-dir=build_posix_nwfmu_default']},
-"   \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-"   \ })
+"  \ 'name': 'clangd',
+"  \ 'cmd': {server_info->['clangd', '--background-index']},
+"  \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+"  \ })
 " endif
+if executable('ccls')
+  au User lsp_setup call lsp#register_server({
+       \ 'name': 'ccls',
+       \ 'cmd': {server_info->['ccls']},
+       \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+       \ 'initialization_options': {'cache': {'directory': '.cache/ccls' }},
+       \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+       \ })
+endif
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   nmap <buffer> <C-]> <plug>(lsp-definition)

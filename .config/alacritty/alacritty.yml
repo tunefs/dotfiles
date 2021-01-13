@@ -41,7 +41,7 @@ colors:
     cyan: '0x8FBCBB'
     white: '0xECEFF4'
 
-background_opacity: 0.7
+background_opacity: 0.92
 
 shell:
   program: /bin/zsh

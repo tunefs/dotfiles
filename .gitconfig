@@ -18,8 +18,16 @@
 [credential]
 	helper = store --file /Users/saito/.git-credentials
 [delta]
-	tabs = 0
-	theme = Nord
+	features = decorations
+	line-numbers = true
+	syntax-theme = Nord
+	tabs = 8
+	# theme = Nord
+[delta "decorations"]
+	commit-decoration-style = yellow box ul
+	file-decoration-style = yellow ul
+	file-style = yellow
+	hunk-header-decoration-style = yellow box
 [diff]
 	compactionHeuristic = true
 [fetch]
