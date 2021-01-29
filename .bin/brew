@@ -1,2 +1,2 @@
 #!/bin/sh
-PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" exec brew $@
+PATH="$HOME/bin:/opt/homebrew/sbin:/opt/homebrew/bin:/usr/sbin:/usr/bin:/sbin:/bin" exec brew $@

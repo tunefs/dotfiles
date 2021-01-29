@@ -11,7 +11,7 @@ set -x NVIM_LISTEN_ADDRESS $HOME/.vim/tmp/nvimsocket
 set -x PAGER less
 set -x PYENV_ROOT $HOME/.pyenv
 
-set -x PATH $HOME/.bin $HOME/.fzf/bin $PYENV_ROOT/bin $GOPATH/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /Applications/ARM/bin
+set -x PATH $HOME/.bin $PYENV_ROOT/bin $GOPATH/bin /opt/homebrew/sbin /opt/homebrew/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/local/arm-none-eabi-gcc/bin
 eval (pyenv init - | source)
 eval (nodenv init - | source)
 

@@ -35,7 +35,7 @@
 [ghq]
 	root = ~/.ghq
 [gpg]
-	program = /usr/local/bin/gpg
+	program = /opt/homebrew/bin/gpg
 [init]
 	defaultBranch = main
 [interactive]

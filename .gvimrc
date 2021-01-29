@@ -1,5 +1,5 @@
 syntax enable
-colorscheme nord
+colorscheme deep-space
 set antialias
 set background=dark
 " set blurradius=3
@@ -17,7 +17,7 @@ set lines=50
 " set linespace=1
 set macligatures
 set macmeta
-set transparency=8
+" set transparency=8
 
 noremap <silent> <D-`> :macaction _cycleWindows:<CR>
 noremap! <silent> <D-`> <C-o>:macaction _cycleWindows:<CR>

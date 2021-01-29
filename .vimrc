@@ -3,6 +3,7 @@ set autoindent
 set autoread
 set background=dark
 set backspace=indent,eol,start
+set belloff=all
 set breakindent
 set cindent
 set cmdheight=1
@@ -74,8 +75,8 @@ Plug 'aklt/plantuml-syntax'
 Plug 'arcticicestudio/nord-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-emoji'
 Plug 'kannokanno/previm'
@@ -91,7 +92,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
+Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'tpope/vim-fugitive'
+Plug 'haya14busa/vim-migemo'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 call plug#end()
@@ -112,7 +115,7 @@ let g:cpp_no_function_highlight = 1
 let g:fzf_buffers_jump = 1
 let g:gitgutter_terminal_reports_focus = 0
 let g:lightline = {
-  \ 'colorscheme': 'nord',
+  \ 'colorscheme': 'deepspace',
   \ 'active': {'left': [['mode', 'paste'],
   \                     ['readonly', 'fugitive', 'filename', 'modified']],
   \            'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]},
@@ -157,7 +160,7 @@ let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 "  \ "class": "🔸"
 "  \ }
 
-colorscheme nord
+colorscheme deep-space
 filetype plugin indent on
 syntax enable
 
@@ -234,7 +237,7 @@ if has("nvim")
 else
 "   highlight SpecialKey guifg=#475C69
 endif
-highlight Normal guibg=NONE
+" highlight Normal guibg=NONE
 " highlight NonText guifg=#475C69
 
 command! -bang -nargs=* Ag
@@ -248,19 +251,19 @@ command T4 set shiftwidth=4 expandtab
 
 " if executable('clangd')
 "   au User lsp_setup call lsp#register_server({
-"  \ 'name': 'clangd',
-"  \ 'cmd': {server_info->['clangd', '--background-index']},
-"  \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-"  \ })
+" \ 'name': 'clangd',
+" \ 'cmd': {server_info->['clangd', '--background-index']},
+" \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+" \ })
 " endif
 if executable('ccls')
   au User lsp_setup call lsp#register_server({
-       \ 'name': 'ccls',
-       \ 'cmd': {server_info->['ccls']},
-       \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
-       \ 'initialization_options': {'cache': {'directory': '.cache/ccls' }},
-       \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-       \ })
+      \ 'name': 'ccls',
+      \ 'cmd': {server_info->['ccls']},
+      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+      \ 'initialization_options': {'cache': {'directory': '.cache/ccls' }},
+      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+      \ })
 endif
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
