@@ -13,7 +13,7 @@ set guifontwide=FiraCode\ Nerd\ Font:h13,HiraginoSans-W5:h13
 " set guifontwide=YuGothic:h13
 set guioptions-=rL
 set noimdisable
-set lines=50
+set lines=60
 " set linespace=1
 set macligatures
 set macmeta

@@ -24,6 +24,7 @@ alias l=less
 alias lg=lazygit
 alias ls='lsd -F'
 alias ll='lsd -Fl'
+alias lll='lsd -FlL'
 alias M='history merge'
 alias tenki=wego
 #alias tig='tig --all'
