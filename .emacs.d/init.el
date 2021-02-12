@@ -8,7 +8,7 @@
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
  '(make-backup-files nil)
- '(package-selected-packages '(hybrid-reverse-theme nord-theme ##))
+ '(package-selected-packages '(atom-one-dark-theme hybrid-reverse-theme nord-theme ##))
  '(scroll-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -17,8 +17,8 @@
  ;; If there is more than one, they won't work right.
  )
 ; (set-frame-parameter nil 'alpha 92)
-; (load-theme 'nord t)
-(load-theme 'hybrid-reverse t)
+(load-theme 'nord t)
+; (load-theme 'hybrid-reverse t)
 (tool-bar-mode 0)
 ;(menu-bar-mode 0)
 (setq ns-command-modifier (quote meta))

@@ -35,7 +35,7 @@
 [ghq]
 	root = ~/.ghq
 [gpg]
-	program = /opt/homebrew/bin/gpg
+	program = /Users/saito/.bin/gpg
 [init]
 	defaultBranch = main
 [interactive]

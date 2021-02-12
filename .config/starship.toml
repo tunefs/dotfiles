@@ -32,7 +32,7 @@ format = "祥[$duration]($style) "
 symbol = " "
 
 [directory]
-format = "📁[$path]($style)[$read_only]($read_only_style) "
+#format = "📁[$path]($style)[$read_only]($read_only_style) "
 #fish_style_pwd_dir_length = 1
 
 [git_branch]
@@ -43,19 +43,19 @@ symbol = "  "
 only_detached = false
 
 [git_status]
-conflicted = "🏳"
-ahead = "🏎💨"
-behind = "😰"
-diverged = "😵"
-untracked = "🤷"
-stashed = "📦"
-modified = "📝"
-staged.value = "++"
-staged.style = "green"
-staged_count.enabled = true
-staged_count.style = "green"
-renamed = "👅"
-deleted = "🗑"
+#conflicted = "🏳"
+#ahead = "🏎💨"
+#behind = "😰"
+#diverged = "😵"
+#untracked = "🤷"
+#stashed = "📦"
+#modified = "📝"
+#staged.value = "++"
+#staged.style = "green"
+#staged_count.enabled = true
+#staged_count.style = "green"
+#renamed = "👅"
+#deleted = "🗑"
 
 [golang]
 symbol = " "

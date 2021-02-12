@@ -206,6 +206,7 @@ nnoremap <silent> <M-u> :<C-u>nohlsearch<CR>
 nnoremap <silent> <C-n> :<C-u>nohlsearch<CR>
 nnoremap <silent> <Leader>a :<C-u>Ag! <C-r><C-w><CR>
 nnoremap <silent> <Leader>b :<C-u>Buffers<CR>
+nnoremap <silent> <Leader>f :<C-u>FZF<CR>
 nnoremap <silent> <Leader>g :<C-u>GFiles<CR>
 nnoremap <silent> <Leader>G :<C-u>GFiles?<CR>
 nmap <Leader>c <Plug>(caw:hatpos:toggle)
