@@ -50,6 +50,7 @@ set smarttab
 set shell=fish
 set tabstop=8
 set termguicolors
+set notitle
 set ttyfast
 set updatetime=500
 set wildmenu
