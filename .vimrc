@@ -68,6 +68,9 @@ endif
 if &term == "screen-256color"
   let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
   let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+  let &t_SI = "\<Esc>[5 q"
+  let &t_SR = "\<Esc>[3 q"
+  let &t_EI = "\<Esc>[1 q"
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -76,7 +79,7 @@ Plug 'aklt/plantuml-syntax'
 Plug 'arcticicestudio/nord-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'itchyny/lightline.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-emoji'
@@ -251,22 +254,22 @@ command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 command T4 set shiftwidth=4 expandtab
 
-" if executable('clangd')
-"   au User lsp_setup call lsp#register_server({
-" \ 'name': 'clangd',
-" \ 'cmd': {server_info->['clangd', '--background-index']},
-" \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-" \ })
-" endif
-if executable('ccls')
+if executable('clangd')
   au User lsp_setup call lsp#register_server({
-      \ 'name': 'ccls',
-      \ 'cmd': {server_info->['ccls']},
-      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
-      \ 'initialization_options': {'cache': {'directory': '.cache/ccls' }},
-      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-      \ })
+\ 'name': 'clangd',
+\ 'cmd': {server_info->['clangd', '--background-index']},
+\ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+\ })
 endif
+" if executable('ccls')
+"   au User lsp_setup call lsp#register_server({
+"      \ 'name': 'ccls',
+"      \ 'cmd': {server_info->['ccls']},
+"      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+"      \ 'initialization_options': {'cache': {'directory': '.cache/ccls' }},
+"      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+"      \ })
+" endif
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   nmap <buffer> <C-]> <plug>(lsp-definition)

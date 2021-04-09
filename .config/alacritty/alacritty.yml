@@ -127,6 +127,7 @@ shell:
 #alt_send_esc: true
 
 key_bindings:
+  - { key: Key2,   mods: Control,         chars:  "\x00" }
   - { key: Key6,   mods: Control,         chars:  "\x1e" }
   - { key: Q,      mods: Control,         chars:  "\x11" }
 #   - { key: N,      mods: Command,         action: SpawnNewInstance }
