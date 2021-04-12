@@ -98,6 +98,7 @@ Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'tpope/vim-fugitive'
+Plug 'brglng/vim-im-select'
 Plug 'haya14busa/vim-migemo'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
@@ -118,6 +119,8 @@ let g:cpp_no_function_highlight = 1
 " let g:fzf_layout = {'window': 'tabnew'}
 let g:fzf_buffers_jump = 1
 let g:gitgutter_terminal_reports_focus = 0
+let g:im_select_default = 'com.apple.keylayout.US'
+let g:im_select_get_im_cmd = ['im-select']
 let g:lightline = {
   \ 'colorscheme': 'deepspace',
   \ 'active': {'left': [['mode', 'paste'],
