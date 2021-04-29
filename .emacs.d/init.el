@@ -10,7 +10,8 @@
  '(make-backup-files nil)
  '(package-selected-packages
    '(nordless-theme atom-one-dark-theme hybrid-reverse-theme nord-theme ##))
- '(scroll-bar-mode nil))
+ '(scroll-bar-mode nil)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -25,3 +26,4 @@
 (setq ns-command-modifier (quote meta))
 (global-set-key [(control ?h)] 'delete-backward-char)
 (global-set-key (kbd "S-SPC") 'set-mark-command)
+(set-frame-font "FiraCode Nerd Font-13")

@@ -58,6 +58,7 @@ set wildmode=list:longest
 if has("nvim")
   set clipboard+=unnamedplus
   set inccommand=split
+  set winblend=15
 else
   set clipboard=unnamed,autoselect
   set ttymouse=xterm2
@@ -141,6 +142,7 @@ let g:lightline = {
   \ }
 let g:loaded_matchparen = 1
 let g:lsp_diagnostics_enabled = 0
+let g:lsp_document_code_action_signs_enabled = 0
 " let g:lsp_insert_text_enabled = 0
 let g:lsp_text_edit_enabled = 0
 let g:netrw_banner=0

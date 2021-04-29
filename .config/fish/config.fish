@@ -19,7 +19,8 @@ switch (arch)
         set -x HOMEBREW /usr/local
 	set -x PATH $HOME/.bin $PYENV_ROOT/bin $GOPATH/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/sbin /usr/bin /sbin /bin $GNUARMEMB_TOOLCHAIN_PATH/bin
     case 'arm*'
-	set -x GNUARMEMB_TOOLCHAIN_PATH /usr/local/arm-none-eabi-gcc
+        #set -x GNUARMEMB_TOOLCHAIN_PATH /usr/local/arm-none-eabi-gcc
+	set -x GNUARMEMB_TOOLCHAIN_PATH /Applications/ARM
         set -x HOMEBREW /opt/homebrew
 	set -x PATH $HOME/.bin $PYENV_ROOT/bin $GOPATH/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin $GNUARMEMB_TOOLCHAIN_PATH/bin
 end
@@ -41,7 +42,8 @@ alias M='history merge'
 alias tenki=wego
 #alias tig='tig --all'
 alias tree='lsd -F --tree'
-#alias typora='open -a typora'
+alias typora='open -a typora'
+alias v='gvim --remote'
 alias xd='hexdump -C'
 
 function my_command_not_found --on-event fish_command_not_found

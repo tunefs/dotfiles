@@ -117,12 +117,12 @@ colors:
 
 # background_opacity: 0.92
 
-shell:
-  program: /bin/zsh
-  args:
-    - --login
-    - -c
-    - "tmux attach || tmux"
+# shell:
+#   program: /bin/zsh
+#   args:
+#     - --login
+#     - -c
+#     - "tmux attach || tmux"
 
 #alt_send_esc: true
 

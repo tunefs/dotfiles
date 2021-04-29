@@ -7,14 +7,14 @@ disabled = true
 [aws.region_aliases]
 ap-northeast-1 = "東京"
 
-[battery]
+#[battery]
 #full_symbol = "🔋"
 #charging_symbol = "⚡️"
 #discharging_symbol = "💀"
 
 [[battery.display]]
 threshold = 100
-style = "bold red"
+#style = "bold red"
 
 [character]
 success_symbol = "[](bold green)"
@@ -42,7 +42,7 @@ symbol = "  "
 [git_commit]
 only_detached = false
 
-[git_status]
+#[git_status]
 #conflicted = "🏳"
 #ahead = "🏎💨"
 #behind = "😰"
@@ -72,10 +72,7 @@ symbol = "🤚"
 [memory_usage]
 symbol = " "
 disabled = false
-show_percentage = true
-show_swap = true
 threshold = -1
-separator = "/"
 
 [nodejs]
 symbol = " "
