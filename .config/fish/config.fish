@@ -11,21 +11,18 @@ set -x LESSCHARSET utf-8
 set -x NVIM_LISTEN_ADDRESS $HOME/.vim/tmp/nvimsocket
 set -x PAGER less
 set -x PYENV_ROOT $HOME/.pyenv
-set -x ZEPHYR_TOOLCHAIN_VARIANT gnuarmemb
 
 switch (arch) 
     case 'i386*'
-	set -x GNUARMEMB_TOOLCHAIN_PATH /Applications/ARM
         set -x HOMEBREW /usr/local
-	set -x PATH $HOME/.bin $PYENV_ROOT/bin $GOPATH/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/sbin /usr/bin /sbin /bin $GNUARMEMB_TOOLCHAIN_PATH/bin
+	set -x PATH $HOME/.bin $PYENV_ROOT/bin $GOPATH/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/sbin /usr/bin /sbin /bin
     case 'arm*'
-        #set -x GNUARMEMB_TOOLCHAIN_PATH /usr/local/arm-none-eabi-gcc
-	set -x GNUARMEMB_TOOLCHAIN_PATH /Applications/ARM
         set -x HOMEBREW /opt/homebrew
-	set -x PATH $HOME/.bin $PYENV_ROOT/bin $GOPATH/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin $GNUARMEMB_TOOLCHAIN_PATH/bin
+	set -x PATH $HOME/.bin $PYENV_ROOT/bin $GOPATH/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 end
 
-eval (pyenv init - | source)
+pyenv init --path | source
+pyenv init - | source
 eval (nodenv init - | source)
 
 ulimit -S -n 2048
@@ -43,7 +40,7 @@ alias tenki=wego
 #alias tig='tig --all'
 alias tree='lsd -F --tree'
 alias typora='open -a typora'
-alias v='gvim --remote'
+alias v='gvim --remote-silent'
 alias xd='hexdump -C'
 
 function my_command_not_found --on-event fish_command_not_found

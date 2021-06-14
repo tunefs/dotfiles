@@ -210,6 +210,7 @@ inoremap <C-g> <ESC>
 cnoremap <C-g> <C-c>
 cnoremap <C-y> <C-g>
 vnoremap <C-g> <C-c>
+nmap yp :<C-u>let @* = expand("%")<CR>
 nnoremap <silent> <ESC>u :<C-u>nohlsearch<CR>
 nnoremap <silent> <M-u> :<C-u>nohlsearch<CR>
 nnoremap <silent> <C-n> :<C-u>nohlsearch<CR>
