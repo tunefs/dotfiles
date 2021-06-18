@@ -214,20 +214,24 @@ nmap yp :<C-u>let @* = expand("%")<CR>
 nnoremap <silent> <ESC>u :<C-u>nohlsearch<CR>
 nnoremap <silent> <M-u> :<C-u>nohlsearch<CR>
 nnoremap <silent> <C-n> :<C-u>nohlsearch<CR>
-nnoremap <silent> <Leader>a :<C-u>Ag! <C-r><C-w><CR>
-nnoremap <silent> <Leader>b :<C-u>Buffers<CR>
-nnoremap <silent> <Leader>f :<C-u>FZF<CR>
-nnoremap <silent> <Leader>g :<C-u>GFiles<CR>
-nnoremap <silent> <Leader>G :<C-u>GFiles?<CR>
+if !exists('g:vscode')
+  nnoremap <silent> <Leader>a :<C-u>Ag! <C-r><C-w><CR>
+  nnoremap <silent> <Leader>b :<C-u>Buffers<CR>
+  nnoremap <silent> <Leader>f :<C-u>FZF<CR>
+  nnoremap <silent> <Leader>g :<C-u>GFiles<CR>
+  nnoremap <silent> <Leader>G :<C-u>GFiles?<CR>
+endif
 nmap <Leader>c <Plug>(caw:hatpos:toggle)
 vmap <Leader>c <Plug>(caw:hatpos:toggle)
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+if !exists('g:vscode')
+  imap <c-x><c-k> <plug>(fzf-complete-word)
+  imap <c-x><c-f> <plug>(fzf-complete-path)
+  imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+  imap <c-x><c-l> <plug>(fzf-complete-line)
+endif
 
 map <MiddleMouse>   <Nop>
 map <2-MiddleMouse> <Nop>
@@ -251,42 +255,44 @@ endif
 " highlight Normal guibg=NONE
 " highlight NonText guifg=#475C69
 
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-command T4 set shiftwidth=4 expandtab
+if !exists('g:vscode')
+  command! -bang -nargs=* Ag
+    \ call fzf#vim#ag(<q-args>,
+    \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+    \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+    \                 <bang>0)
+  command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+  command T4 set shiftwidth=4 expandtab
 
-if executable('clangd')
-  au User lsp_setup call lsp#register_server({
-\ 'name': 'clangd',
-\ 'cmd': {server_info->['clangd', '--background-index']},
-\ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-\ })
+  if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+  \ 'name': 'clangd',
+  \ 'cmd': {server_info->['clangd', '--background-index']},
+  \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+  \ })
+  endif
+  " if executable('ccls')
+  "   au User lsp_setup call lsp#register_server({
+  "      \ 'name': 'ccls',
+  "      \ 'cmd': {server_info->['ccls']},
+  "      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+  "      \ 'initialization_options': {'cache': {'directory': '.cache/ccls' }},
+  "      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+  "      \ })
+  " endif
+  function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    nmap <buffer> <C-]> <plug>(lsp-definition)
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> <Leader><Leader>h <plug>(lsp-hover)
+    nmap <buffer> <Leader><Leader>r <plug>(lsp-references)
+    nmap <buffer> <silent> <Leader><Leader>v :Vista!!<CR>
+  endfunction
+  augroup lsp_install
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+  augroup END
 endif
-" if executable('ccls')
-"   au User lsp_setup call lsp#register_server({
-"      \ 'name': 'ccls',
-"      \ 'cmd': {server_info->['ccls']},
-"      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
-"      \ 'initialization_options': {'cache': {'directory': '.cache/ccls' }},
-"      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-"      \ })
-" endif
-function! s:on_lsp_buffer_enabled() abort
-  setlocal omnifunc=lsp#complete
-  nmap <buffer> <C-]> <plug>(lsp-definition)
-  nmap <buffer> gd <plug>(lsp-definition)
-  nmap <buffer> <Leader><Leader>h <plug>(lsp-hover)
-  nmap <buffer> <Leader><Leader>r <plug>(lsp-references)
-  nmap <buffer> <silent> <Leader><Leader>v :Vista!!<CR>
-endfunction
-augroup lsp_install
-  au!
-  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
 
 " vi:et:sw=2
