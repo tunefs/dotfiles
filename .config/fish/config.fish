@@ -24,6 +24,7 @@ end
 pyenv init --path | source
 pyenv init - | source
 eval (nodenv init - | source)
+zoxide init fish | source
 
 ulimit -S -n 2048
 
@@ -32,13 +33,13 @@ alias g=gcd
 alias j=jobs
 alias l=less
 alias lg=lazygit
-alias ls='lsd -F'
-alias ll='lsd -Fl'
-alias lll='lsd -FlL'
+alias ls='exa -F'
+alias ll='exa -Fl'
+#alias lll='lsd -FlL'
 alias M='history merge'
 alias tenki=wego
 #alias tig='tig --all'
-alias tree='lsd -F --tree'
+alias tree='exa -F --tree'
 alias typora='open -a typora'
 alias v='gvim --remote-silent'
 alias xd='hexdump -C'
