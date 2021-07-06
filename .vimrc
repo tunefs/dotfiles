@@ -59,6 +59,7 @@ if has("nvim")
   set clipboard+=unnamedplus
   set inccommand=split
   set winblend=15
+  set pumblend=15
 else
   set clipboard=unnamed,autoselect
   set ttymouse=xterm2
@@ -254,6 +255,11 @@ else
 endif
 " highlight Normal guibg=NONE
 " highlight NonText guifg=#475C69
+" highlight Normal ctermbg=NONE guibg=NONE
+" highlight NonText ctermbg=NONE guibg=NONE
+" highlight LineNr ctermbg=NONE guibg=NONE
+" highlight Folded ctermbg=NONE guibg=NONE
+" highlight EndOfBuffer ctermbg=NONE guibg=NONE
 
 if !exists('g:vscode')
   command! -bang -nargs=* Ag
