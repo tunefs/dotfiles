@@ -232,6 +232,10 @@ if !exists('g:vscode')
   imap <c-x><c-j> <plug>(fzf-complete-file-ag)
   imap <c-x><c-l> <plug>(fzf-complete-line)
 endif
+if exists('g:vscode')
+  nnoremap [c <Cmd>call VSCodeNotify('workbench.action.editor.previousChange')<CR>
+  nnoremap ]c <Cmd>call VSCodeNotify('workbench.action.editor.nextChange')<CR>
+endif
 
 map <MiddleMouse>   <Nop>
 map <2-MiddleMouse> <Nop>
