@@ -1,7 +1,7 @@
 syntax enable
-colorscheme deep-space
+colorscheme PaperColor
 set antialias
-set background=dark
+set background=light
 " set blurradius=3
 set cmdheight=1
 set columns=210

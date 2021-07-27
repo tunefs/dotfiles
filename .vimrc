@@ -1,7 +1,8 @@
 set ambiwidth=single
 set autoindent
 set autoread
-set background=dark
+" set background=dark
+set background=light
 set backspace=indent,eol,start
 set belloff=all
 set breakindent
@@ -79,6 +80,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'aklt/plantuml-syntax'
 Plug 'arcticicestudio/nord-vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf'
 Plug 'JuliaEditorSupport/julia-vim'
@@ -87,6 +89,7 @@ Plug 'junegunn/vim-emoji'
 Plug 'kannokanno/previm'
 Plug 'liuchengxu/vista.vim'
 Plug 'mileszs/ack.vim'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'plasticboy/vim-markdown'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -123,7 +126,7 @@ let g:gitgutter_terminal_reports_focus = 0
 let g:im_select_default = 'com.apple.keylayout.US'
 let g:im_select_get_im_cmd = ['im-select']
 let g:lightline = {
-  \ 'colorscheme': 'deepspace',
+  \ 'colorscheme': 'PaperColor',
   \ 'active': {'left': [['mode', 'paste'],
   \                     ['readonly', 'fugitive', 'filename', 'modified']],
   \            'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]},
@@ -168,8 +171,11 @@ let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 "  \ "variable": "🔸",
 "  \ "class": "🔸"
 "  \ }
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_theme = 'lightline'
 
-colorscheme deep-space
+" colorscheme deep-space
+colorscheme PaperColor
 filetype plugin indent on
 syntax enable
 

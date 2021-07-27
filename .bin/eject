@@ -1,0 +1,11 @@
+#!/bin/sh
+for i in `diskutil list | grep '^/dev/disk' | cut -d ' ' -f 1`; do
+	name=`diskutil info $i | grep 'Device / Media Name:' | sed -E 's/.*: +//'`
+	location=`diskutil info $i | grep 'Device Location:' | sed -E 's/.*: +//'`
+	removable=`diskutil info $i | grep 'Removable Media:' | sed -E 's/.*: +//'`
+	echo "$i $name $location $removable"
+	if [ \( "$name" = "SD/MMC" \) -a \( "$location" = "External" \) -a \( "$removable" = "Removable" \) ]; then
+		echo "Eject $i ..."
+		diskutil eject $i
+	fi
+done

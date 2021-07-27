@@ -20,7 +20,7 @@
 [delta]
 	features = decorations
 	line-numbers = true
-	syntax-theme = Nord
+	syntax-theme = GitHub
 	tabs = 8
 	# theme = Nord
 [delta "decorations"]
@@ -30,6 +30,7 @@
 	hunk-header-decoration-style = yellow box
 [diff]
 	compactionHeuristic = true
+	colorMoved = default
 [fetch]
 	prune = true
 [ghq]

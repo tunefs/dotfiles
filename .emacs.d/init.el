@@ -20,7 +20,7 @@
  )
 ; (set-frame-parameter nil 'alpha 92)
 ; (load-theme 'nord t)
-(load-theme 'atom-one-dark t)
+;(load-theme 'atom-one-dark t)
 (tool-bar-mode 0)
 ;(menu-bar-mode 0)
 (setq ns-command-modifier (quote meta))
