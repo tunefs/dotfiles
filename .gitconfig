@@ -23,14 +23,14 @@
 	syntax-theme = GitHub
 	tabs = 8
 	# theme = Nord
-[delta "decorations"]
-	commit-decoration-style = yellow box ul
-	file-decoration-style = yellow ul
-	file-style = yellow
-	hunk-header-decoration-style = yellow box
+# [delta "decorations"]
+	# commit-decoration-style = yellow box ul
+	# file-decoration-style = yellow ul
+	# file-style = yellow
+	# hunk-header-decoration-style = yellow box
 [diff]
 	compactionHeuristic = true
-	colorMoved = default
+	# colorMoved = default
 [fetch]
 	prune = true
 [ghq]

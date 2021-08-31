@@ -172,8 +172,10 @@ let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 "  \ "variable": "🔸",
 "  \ "class": "🔸"
 "  \ }
-let g:tmuxline_powerline_separators = 0
 let g:tmuxline_theme = 'lightline'
+let g:tmuxline_preset = 'crosshair'
+let g:tmuxline_status_justify = 'centre'
+let g:tmuxline_powerline_separators = 0
 
 " colorscheme deep-space
 colorscheme PaperColor
@@ -265,8 +267,8 @@ else
 endif
 " highlight Normal guibg=NONE
 " highlight NonText guifg=#475C69
-" highlight Normal ctermbg=NONE guibg=NONE
-" highlight NonText ctermbg=NONE guibg=NONE
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
 " highlight LineNr ctermbg=NONE guibg=NONE
 " highlight Folded ctermbg=NONE guibg=NONE
 " highlight EndOfBuffer ctermbg=NONE guibg=NONE
