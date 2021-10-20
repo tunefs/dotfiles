@@ -1,6 +1,9 @@
 window:
-  decorations: buttonless
-  startup_mode: Maximized
+  # decorations: buttonless
+  # startup_mode: Maximized
+  padding:
+    x: 4
+    y: 4
 
 font:
   normal:
@@ -13,6 +16,8 @@ font:
     family: FiraCode Nerd Font Mono
     style: Retina
   size: 13
+  offset:
+    y: 3
   use_thin_strokes: true
 
 # Colors (Pencil Light)

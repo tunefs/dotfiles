@@ -22,10 +22,10 @@ set -x ZEPHYR_TOOLCHAIN_VARIANT gnuarmemb
 switch (arch) 
     case 'i386*'
         set -x HOMEBREW /usr/local
-	set -x PATH $HOME/.bin $PYENV_ROOT/bin $GOPATH/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/sbin /usr/bin /sbin /bin
+	set -x PATH $HOME/.bin $GOPATH/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/sbin /usr/bin /sbin /bin
     case 'arm*'
         set -x HOMEBREW /opt/homebrew
-	set -x PATH $HOME/.bin $PYENV_ROOT/bin $GOPATH/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+	set -x PATH $HOME/.bin $GOPATH/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 end
 
 eval (gdircolors -c)
@@ -50,7 +50,7 @@ alias tenki=wego
 alias tree='exa -F --tree'
 alias typora='open -a typora'
 alias v='gvim --remote-silent'
-alias xd='hexdump -C'
+alias xd=hexyl
 
 function my_command_not_found --on-event fish_command_not_found
     if type figlet > /dev/null 2>&1
