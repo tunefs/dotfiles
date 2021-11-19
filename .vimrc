@@ -124,7 +124,7 @@ let g:cpp_no_function_highlight = 1
 " let g:fzf_layout = {'window': 'tabnew'}
 let g:fzf_buffers_jump = 1
 let g:gitgutter_terminal_reports_focus = 0
-let g:im_select_default = 'com.apple.keylayout.US'
+let g:im_select_default = 'com.apple.keylayout.ABC'
 let g:im_select_get_im_cmd = ['im-select']
 let g:lightline = {
   \ 'colorscheme': 'PaperColor',
