@@ -45,6 +45,9 @@
 	rebase = false
 [push]
 	default = simple
+	followTags = true
+[tag]
+	gpgsign = true
 [user]
 	name = Atsunori Saito
 	email = sai@yedo.com

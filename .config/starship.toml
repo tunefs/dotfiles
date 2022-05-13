@@ -70,10 +70,10 @@ symbol = " "
 [jobs]
 symbol = "🤚"
 
-[memory_usage]
-symbol = " "
-disabled = false
-threshold = -1
+#[memory_usage]
+#symbol = " "
+#disabled = false
+#threshold = -1
 
 [nodejs]
 symbol = " "

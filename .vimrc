@@ -55,7 +55,7 @@ set notitle
 set ttyfast
 set updatetime=500
 set wildmenu
-set wildmode=list:longest
+set wildmode=longest:full,full
 if has("nvim")
   set clipboard+=unnamedplus
   set inccommand=split
@@ -82,15 +82,18 @@ Plug 'aklt/plantuml-syntax'
 Plug 'arcticicestudio/nord-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'edkolev/tmuxline.vim'
+Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app && yarn install'}
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-emoji'
-Plug 'kannokanno/previm'
 Plug 'liuchengxu/vista.vim'
 Plug 'mileszs/ack.vim'
 Plug 'NLKNguyen/papercolor-theme'
+if has("nvim")
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+endif
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'plasticboy/vim-markdown'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -150,10 +153,13 @@ let g:lsp_document_code_action_signs_enabled = 0
 " let g:lsp_insert_text_enabled = 0
 let g:lsp_text_edit_enabled = 0
 let g:netrw_banner=0
+" let g:netrw_keepdir=0
 let g:netrw_liststyle=1
+let g:netrw_maxfilenamelen=48
 let g:netrw_nogx = 1
+let g:netrw_sizestyle = "h"
+let g:netrw_timefmt = "%Y/%m/%d %I:%M:%S"
 let g:netrw_winsize = -32
-let g:previm_open_cmd = 'open -a Safari'
 let g:surround_no_insert_mappings = 1
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 0
@@ -222,7 +228,7 @@ vnoremap <C-g> <C-c>
 nmap yp :<C-u>let @* = expand("%")<CR>
 nnoremap <silent> <ESC>u :<C-u>nohlsearch<CR>
 nnoremap <silent> <M-u> :<C-u>nohlsearch<CR>
-nnoremap <silent> <C-n> :<C-u>nohlsearch<CR>
+" nnoremap <silent> <C-n> :<C-u>nohlsearch<CR>
 if !exists('g:vscode')
   nnoremap <silent> <Leader>a :<C-u>Ag! <C-r><C-w><CR>
   nnoremap <silent> <Leader>b :<C-u>Buffers<CR>
@@ -256,13 +262,17 @@ imap <3-MiddleMouse> <Nop>
 imap <4-MiddleMouse> <Nop>
 
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+autocmd CmdwinEnter [:/?=] setlocal nonumber
+autocmd CmdwinEnter * map <buffer> <C-g> <C-c>
 autocmd FileType * set formatoptions-=o formatoptions-=r
 autocmd InsertLeave * set nopaste
 if has("nvim")
+  unmap Y
   " autocmd TermOpen * startinsert
   autocmd TermOpen * setlocal nonumber
 "   highlight Whitespace guifg=#475C69
 else
+  nnoremap <C-L> <Cmd>nohlsearch<Bar>diffupdate<CR><C-L>
 "   highlight SpecialKey guifg=#475C69
 endif
 " highlight Normal guibg=NONE
@@ -311,6 +321,21 @@ if !exists('g:vscode')
     au!
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
   augroup END
+endif
+
+if has("nvim")
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {"c", "cmake", "cpp", "css", "fish", "html", "javascript", "json", "kotlin", "make", "markdown", "ninja", "python", "typescript"},
+  sync_install = false,
+  ignore_install = { "javascript" },
+  highlight = {
+    enable = true,
+    disable = {},
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
 endif
 
 " vi:et:sw=2

@@ -10,7 +10,8 @@ set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border
 set -x FZF_CTRL_T_OPTS '--preview "bat --color=always --line-range :80 {}"'
 set -x FZF_TMUX 1
 set -x GOPATH $HOME/.go
-set -x GNUARMEMB_TOOLCHAIN_PATH /Applications/ARM
+# set -x GNUARMEMB_TOOLCHAIN_PATH /Applications/ARM
+set -x GNUARMEMB_TOOLCHAIN_PATH $HOME/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content
 set -x LANG en_US.UTF-8
 set -x LESS iMQRsX
 set -x LESSCHARSET utf-8
@@ -36,7 +37,8 @@ zoxide init fish | source
 
 ulimit -S -n 2048
 
-alias b=bcd
+#alias b=bcd
+#alias docker='lima nerdctl'
 alias g=gcd
 alias j=jobs
 alias l=less
@@ -48,11 +50,10 @@ alias M='history merge'
 alias tenki=wego
 #alias tig='tig --all'
 alias tree='exa -F --tree'
-alias typora='open -a typora'
 alias v='gvim --remote-silent'
 alias xd=hexyl
 
-function my_command_not_found --on-event fish_command_not_found
+function fish_command_not_found
     if type figlet > /dev/null 2>&1
         figlet -f cyberlarge "Bad command or file name"
     end
