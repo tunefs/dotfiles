@@ -1,12 +1,15 @@
 set -x EDITOR vi
-# set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border --color fg:#D8DEE9,bg:#2E3440,hl:#A3BE8C,fg+:#D8DEE9,bg+:#434C5E,hl+:#A3BE8C --color pointer:#BF616A,info:#4C566A,spinner:#4C566A,header:#4C566A,prompt:#81A1C1,marker:#EBCB8B'
-# set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border --color=dark --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:#4b5263,hl+:#d858fe --color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef'
+#set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border
+#    --color=light
+#    --color=fg:#4d4d4c,hl:#d7005f
+#    --color=fg+:#4d4d4c,hl+:#d7005f
+#    --color=info:#4271ae,prompt:#8959a8,pointer:#d7005f
+#    --color=marker:#4271ae,spinner:#4271ae,header:#4271ae'
 set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border
-    --color=light
-    --color=fg:#4d4d4c,hl:#d7005f
-    --color=fg+:#4d4d4c,hl+:#d7005f
-    --color=info:#4271ae,prompt:#8959a8,pointer:#d7005f
-    --color=marker:#4271ae,spinner:#4271ae,header:#4271ae'
+    --color=dark
+    --color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
+    --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7'
+#set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border --color=dark'
 set -x FZF_CTRL_T_OPTS '--preview "bat --color=always --line-range :80 {}"'
 set -x FZF_TMUX 1
 set -x GOPATH $HOME/.go

@@ -18,9 +18,9 @@
 [credential]
 	helper = store --file /Users/saito/.git-credentials
 [delta]
-	features = decorations
+	# features = decorations
 	line-numbers = true
-	syntax-theme = GitHub
+	syntax-theme = Dracula
 	tabs = 8
 	# theme = Nord
 # [delta "decorations"]

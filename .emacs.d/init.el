@@ -9,7 +9,7 @@
  '(inhibit-startup-screen t)
  '(make-backup-files nil)
  '(package-selected-packages
-   '(nordless-theme atom-one-dark-theme hybrid-reverse-theme nord-theme ##))
+   '(material-theme nordless-theme atom-one-dark-theme hybrid-reverse-theme nord-theme ##))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -19,8 +19,7 @@
  ;; If there is more than one, they won't work right.
  )
 (set-frame-parameter nil 'alpha 97)
-; (load-theme 'nord t)
-;(load-theme 'atom-one-dark t)
+(load-theme 'material t)
 (tool-bar-mode 0)
 ;(menu-bar-mode 0)
 (setq ns-command-modifier (quote meta))

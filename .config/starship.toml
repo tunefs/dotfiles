@@ -17,6 +17,9 @@ ap-northeast-1 = "TKY"
 threshold = 100
 #style = "bold red"
 
+[c]
+disabled = true
+
 [character]
 success_symbol = "[](bold green)"
 error_symbol = "[](bold red)"
