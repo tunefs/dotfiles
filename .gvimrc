@@ -1,7 +1,7 @@
 syntax enable
 " colorscheme bubblegum-256-light
 set antialias
-set background=light
+set background=dark
 " set blurradius=3
 set cmdheight=1
 " set columns=180

@@ -11,25 +11,25 @@ set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border
     --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7'
 #set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border --color=dark'
 set -x FZF_CTRL_T_OPTS '--preview "bat --color=always --line-range :80 {}"'
-set -x FZF_TMUX 1
-set -x GOPATH $HOME/.go
+#set -x FZF_TMUX 1
+#set -x GOPATH $HOME/.go
 # set -x GNUARMEMB_TOOLCHAIN_PATH /Applications/ARM
 set -x GNUARMEMB_TOOLCHAIN_PATH $HOME/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/10.3.1-2.3.1/.content
 set -x LANG en_US.UTF-8
 set -x LESS iMQRsX
 set -x LESSCHARSET utf-8
 set -x NVIM_LISTEN_ADDRESS $HOME/.vim/tmp/nvimsocket
-set -x PAGER less
+set -x PAGER bat
 set -x PYENV_ROOT $HOME/.pyenv
 set -x ZEPHYR_TOOLCHAIN_VARIANT gnuarmemb
 
 switch (arch) 
     case 'i386*'
         set -x HOMEBREW /usr/local
-	set -x PATH $HOME/.bin $GOPATH/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/sbin /usr/bin /sbin /bin
+	set -x PATH $HOME/.bin $HOMEBREW/sbin $HOMEBREW/bin /usr/sbin /usr/bin /sbin /bin
     case 'arm*'
         set -x HOMEBREW /opt/homebrew
-	set -x PATH $HOME/.bin $GOPATH/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+	set -x PATH $HOME/.bin $HOMEBREW/sbin $HOMEBREW/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 end
 
 eval (gdircolors -c)
