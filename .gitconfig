@@ -18,16 +18,24 @@
 [credential]
 	helper = store --file /Users/saito/.git-credentials
 [delta]
-	# features = decorations
+	features = decorations
 	line-numbers = true
 	syntax-theme = Dracula
 	tabs = 8
 	# theme = Nord
-# [delta "decorations"]
+[delta "decorations"]
 	# commit-decoration-style = yellow box ul
 	# file-decoration-style = yellow ul
 	# file-style = yellow
 	# hunk-header-decoration-style = yellow box
+	minus-style                   = normal "#500000"
+	minus-non-emph-style          = normal "#500000"
+	minus-emph-style              = normal "#a00010"
+	minus-empty-line-marker-style = normal "#500000"
+	plus-style                    = syntax "#004000"
+	plus-non-emph-style           = syntax "#004000"
+	plus-emph-style               = syntax "#007000"
+	plus-empty-line-marker-style  = syntax "#004000"
 [diff]
 	compactionHeuristic = true
 	# colorMoved = default
@@ -46,6 +54,7 @@
 [push]
 	default = simple
 	followTags = true
+	autoSetupRemote = true
 [tag]
 	gpgsign = true
 [user]

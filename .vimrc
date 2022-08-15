@@ -40,6 +40,7 @@ set noundofile
 set nowritebackup
 set nrformats-=octal
 set number
+" set rtp+=/opt/homebrew/opt/fzf
 set ruler
 set scrolloff=1
 set shiftwidth=8
@@ -79,6 +80,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'aklt/plantuml-syntax'
+Plug 'bronson/vim-trailing-whitespace'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'easymotion/vim-easymotion'
 Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app && yarn install'}

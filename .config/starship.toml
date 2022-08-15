@@ -23,7 +23,7 @@ disabled = true
 [character]
 success_symbol = "[](bold green)"
 error_symbol = "[](bold red)"
-vicmd_symbol = "[](bold green)"
+vimcmd_symbol = "[](bold green)"
 
 [cmake]
 symbol = "⟁ "
@@ -78,6 +78,9 @@ symbol = "🤚"
 #disabled = false
 #threshold = -1
 
+# [line_break]
+# disabled = true
+
 [nodejs]
 symbol = " "
 
@@ -97,3 +100,6 @@ symbol = " "
 
 [rust]
 symbol = " "
+
+[shell]
+disabled = false

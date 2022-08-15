@@ -23,7 +23,7 @@ set -x PAGER bat
 set -x PYENV_ROOT $HOME/.pyenv
 set -x ZEPHYR_TOOLCHAIN_VARIANT gnuarmemb
 
-switch (arch) 
+switch (arch)
     case 'i386*'
         set -x HOMEBREW /usr/local
 	set -x PATH $HOME/.bin $HOMEBREW/sbin $HOMEBREW/bin /usr/sbin /usr/bin /sbin /bin

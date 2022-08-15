@@ -58,7 +58,7 @@ return {
   -- enable_scroll_bar = true,
   font = wezterm.font("FiraCode Nerd Font", {weight=450, stretch="Normal", italic=false}),
   font_size = 13.0,
-  -- window_background_opacity = 0.95,
+  window_background_opacity = 0.95,
   keys = {
     {key="h", mods="CMD|SHIFT", action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
     {key="o", mods="CMD", action=wezterm.action{ActivatePaneDirection="Next"}},
