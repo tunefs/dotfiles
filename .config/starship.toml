@@ -1,5 +1,7 @@
 command_timeout = 1000
 add_newline = false
+# format = """$character"""
+# right_format = """$all"""
 
 [aws]
 symbol = " "
@@ -14,20 +16,25 @@ ap-northeast-1 = "TKY"
 #discharging_symbol = "💀"
 
 [[battery.display]]
-threshold = 100
+threshold = 50
 #style = "bold red"
 
 [c]
-disabled = true
+symbol = " "
+# disabled = true
 
 [character]
 success_symbol = "[](bold green)"
 error_symbol = "[](bold red)"
+# vicmd_symbol = "[](bold green)"
 vimcmd_symbol = "[](bold green)"
+vimcmd_replace_one_symbol = "[](bold purple)"
+vimcmd_replace_symbol = "[](bold purple)"
+vimcmd_visual_symbol = "[](bold yellow)"
 
 [cmake]
-symbol = "⟁ "
-disabled = true
+symbol = "喝"
+# disabled = true
 
 [cmd_duration]
 format = "祥[$duration]($style) "
@@ -39,12 +46,20 @@ symbol = " "
 #format = "📁[$path]($style)[$read_only]($read_only_style) "
 #fish_style_pwd_dir_length = 1
 
+[docker_context]
+symbol = " "
+
 [git_branch]
 symbol = "  "
 #truncation_length = 4
 
 [git_commit]
 only_detached = false
+# tag_disabled = false
+tag_symbol = " 炙"
+
+# [git_metrics]
+# disabled = false
 
 #[git_status]
 #conflicted = "🏳"
@@ -73,10 +88,10 @@ symbol = " "
 [jobs]
 symbol = "🤚"
 
-#[memory_usage]
-#symbol = " "
-#disabled = false
-#threshold = -1
+[memory_usage]
+symbol = " "
+disabled = false
+# threshold = 80
 
 # [line_break]
 # disabled = true
@@ -103,3 +118,6 @@ symbol = " "
 
 [shell]
 disabled = false
+
+# [status]
+# disabled = false

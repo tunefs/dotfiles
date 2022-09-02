@@ -42,25 +42,26 @@ ulimit -S -n 2048
 
 #alias b=bcd
 #alias docker='lima nerdctl'
+alias b=gbr
 alias g=gcd
 alias j=jobs
 alias l=less
-alias lg=lazygit
 alias ls='exa -F'
 alias ll='exa -Fl'
+alias llb='exa -Fl --bytes'
+alias llt='exa -Fl --sort=date'
 #alias lll='lsd -FlL'
 alias M='history merge'
-alias tenki=wego
 #alias tig='tig --all'
 alias tree='exa -F --tree'
-alias v='gvim --remote-silent'
+alias u=bcd
 alias xd=hexyl
 
-function fish_command_not_found
-    if type figlet > /dev/null 2>&1
-        figlet -f cyberlarge "Bad command or file name"
-    end
-end
+# function fish_command_not_found
+#     if type figlet > /dev/null 2>&1
+#         figlet -f cyberlarge "Bad command or file name"
+#     end
+# end
 
 starship init fish | source
 #source ~/.iterm2_shell_integration.fish
