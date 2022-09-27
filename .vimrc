@@ -100,8 +100,8 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
-Plug 'tyru/caw.vim'
 Plug 'tyru/open-browser.vim'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'brglng/vim-im-select'
 Plug 'tpope/vim-rhubarb'
@@ -208,8 +208,6 @@ if !exists('g:vscode')
   nnoremap <silent> <Leader>G :<C-u>GFiles?<CR>
   nnoremap <silent> <Leader>s :<C-u>Rg! <C-r><C-w><CR>
 endif
-nmap <Leader>c <Plug>(caw:hatpos:toggle)
-vmap <Leader>c <Plug>(caw:hatpos:toggle)
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 

@@ -131,6 +131,9 @@ module.exports = {
         preserveCWD: true,
         // for advanced config flags please refer to https://hyper.is/#cfg
 
+        modifierKeys: {altIsMeta: true},
+        opacity: 0.95,
+        scrollback: 10000,
         hyperBorder: {
             animate: {
                 duration: '8000'
@@ -140,8 +143,9 @@ module.exports = {
             borderRadiusOuter: '8px',
             borderWidth: '4px'
         },
-        modifierKeys: {altIsMeta: true},
-        opacity: 0.95,
+        paneNavigation: {
+            inactivePaneOpacity: 0.7
+        },
     },
     // a list of plugins to fetch and install from npm
     // format: [@org/]project[#version]

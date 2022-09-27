@@ -1,0 +1,20 @@
+set clipboard+=unnamedplus
+set commentary
+set easymotion
+set noerrorbells
+set ignorecase
+set incsearch
+set multiple-cursors
+set smartcase
+set surround
+set visualbell
+inoremap <C-g> <ESC>
+cnoremap <C-g> <C-c>
+vnoremap <C-g> <C-c>
+nnoremap [c :action VcsShowPrevChangeMarker<CR>
+nnoremap ]c :action VcsShowNextChangeMarker<CR>
+map <C-n>  <A-n>
+map <C-p>  <A-p>
+map <C-x>  <A-x>
+map g<C-n> g<A-n>
+let mapleader = "\<Space>"
