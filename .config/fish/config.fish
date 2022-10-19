@@ -52,7 +52,7 @@ alias llb='exa -Fl --bytes'
 alias llt='exa -Fl --sort=date'
 #alias lll='lsd -FlL'
 alias M='history merge'
-#alias tig='tig --all'
+alias tiga='tig --all'
 alias tree='exa -F --tree'
 alias u=bcd
 alias xd=hexyl

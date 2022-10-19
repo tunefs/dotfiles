@@ -6,16 +6,25 @@
 	lp = log -p
 	ls = ls-files
 	s = status -sb
+	wd = diff --color-words
 [color]
+	branch = auto
 	diff = auto
 	status = auto
-	branch = auto
+	ui = auto
 [commit]
 	gpgsign = true
 [core]
+	autocrlf = false
+	attributesfile = /Users/saito/.gitattributes
+	# fsmonitor = true
+	# multipackindex = true
 	pager = delta
 	precomposeunicode = true
+	preloadindex = true
 	quotepath = false
+	safecrlf = warn
+	untrackedcache = true
 [credential]
 	helper = store --file /Users/saito/.git-credentials
 [delta]
@@ -29,18 +38,22 @@
 	# file-decoration-style = yellow ul
 	# file-style = yellow
 	# hunk-header-decoration-style = yellow box
-	minus-style                   = normal "#500000"
-	minus-non-emph-style          = normal "#500000"
-	minus-emph-style              = normal "#a00010"
-	minus-empty-line-marker-style = normal "#500000"
-	plus-style                    = syntax "#004000"
-	plus-non-emph-style           = syntax "#004000"
-	plus-emph-style               = syntax "#007000"
-	plus-empty-line-marker-style  = syntax "#004000"
+	# minus-style                   = normal "#500000"
+	# minus-non-emph-style          = normal "#500000"
+	# minus-emph-style              = normal "#a00010"
+	# minus-empty-line-marker-style = normal "#500000"
+	# plus-style                    = syntax "#004000"
+	# plus-non-emph-style           = syntax "#004000"
+	# plus-emph-style               = syntax "#007000"
+	# plus-empty-line-marker-style  = syntax "#004000"
 [diff]
 	compactionHeuristic = true
 	# colorMoved = default
+	renames = true
+[feature]
+	manyFiles = true
 [fetch]
+	parallel = 4
 	prune = true
 [ghq]
 	root = ~/.ghq
@@ -56,6 +69,8 @@
 	default = simple
 	followTags = true
 	autoSetupRemote = true
+[submodule]
+	fetchJobs = 4
 [tag]
 	gpgsign = true
 [user]

@@ -201,12 +201,11 @@ nmap yp :<C-u>let @* = expand("%")<CR>
 nnoremap <silent> <ESC>u :<C-u>nohlsearch<CR>
 nnoremap <silent> <M-u> :<C-u>nohlsearch<CR>
 if !exists('g:vscode')
-  nnoremap <silent> <Leader>b :<C-u>Buffers<CR>
   nnoremap <silent> <Leader>d :<C-u>Explore<CR>
-  nnoremap <silent> <Leader>f :<C-u>FZF<CR>
+  nnoremap <silent> <Leader>e :<C-u>Buffers<CR>
+  nnoremap <silent> <Leader>f :<C-u>Rg! <C-r><C-w><CR>
   nnoremap <silent> <Leader>g :<C-u>GFiles<CR>
   nnoremap <silent> <Leader>G :<C-u>GFiles?<CR>
-  nnoremap <silent> <Leader>s :<C-u>Rg! <C-r><C-w><CR>
 endif
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
