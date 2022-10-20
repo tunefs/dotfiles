@@ -32,7 +32,7 @@ switch (arch)
 	set -x PATH $HOME/.bin $HOME/.local/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin $HOME/.fig/bin
 end
 
-eval (gdircolors -c)
+#eval (gdircolors -c)
 pyenv init --path | source
 pyenv init - | source
 eval (nodenv init - | source)
