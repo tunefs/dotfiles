@@ -87,6 +87,11 @@ Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app && yarn install'}
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-hijack.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/nerdfont.vim'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mileszs/ack.vim'
 if !exists('g:vscode')
@@ -114,6 +119,9 @@ let g:ackprg = 'ag --vimgrep'
 " let g:EasyMotion_smartcase = 2
 " let g:fzf_layout = {'window': 'tabnew'}
 let g:dracula_italic = 0
+let g:fern#default_hidden=1
+let g:fern#renderer = 'nerdfont'
+let g:fern#renderer#nerdfont#indent_markers = 1
 let g:fzf_buffers_jump = 1
 let g:gitgutter_terminal_reports_focus = 0
 let g:im_select_default = 'com.apple.keylayout.ABC'
@@ -201,7 +209,7 @@ nmap yp :<C-u>let @* = expand("%")<CR>
 nnoremap <silent> <ESC>u :<C-u>nohlsearch<CR>
 nnoremap <silent> <M-u> :<C-u>nohlsearch<CR>
 if !exists('g:vscode')
-  nnoremap <silent> <Leader>d :<C-u>Explore<CR>
+  nnoremap <silent> <Leader>d :<C-u>Fern . -reveal=%<CR>
   nnoremap <silent> <Leader>e :<C-u>Buffers<CR>
   nnoremap <silent> <Leader>f :<C-u>Rg! <C-r><C-w><CR>
   nnoremap <silent> <Leader>g :<C-u>GFiles<CR>
