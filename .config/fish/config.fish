@@ -57,11 +57,19 @@ alias tree='exa -F --tree'
 alias u=bcd
 alias xd=hexyl
 
-# function fish_command_not_found
-#     if type figlet > /dev/null 2>&1
-#         figlet -f cyberlarge "Bad command or file name"
-#     end
-# end
+function fish_greeting
+    if type -q fortune; type -q cowsay; and type -q lolcat
+    	fortune | cowsay -f $HOME/.config/cowsay/mikan.cow | lolcat -F 0.3
+    else
+    	echo "Welcome."
+    end
+end
+
+function fish_command_not_found
+    if type -q cowsay; and type -q lolcat
+        cowsay -f $HOME/.config/cowsay/mikan.cow "Unknown command: $argv[1]" | lolcat -F 0.3
+    end
+end
 
 starship init fish | source
 #source ~/.iterm2_shell_integration.fish

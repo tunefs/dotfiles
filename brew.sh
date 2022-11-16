@@ -2,6 +2,7 @@
 PATH=/opt/homebrew/bin:$PATH
 brew tap homebrew/cask-fonts
 brew install        bat
+brew install        cowsay
 brew install --cask docker
 brew install        exa
 brew install        fd
@@ -10,6 +11,7 @@ brew install        figlet
 brew install        fish
 brew install --cask font-fira-code-nerd-font
 brew install --cask font-jetbrains-mono-nerd-font
+brew install        fortune
 brew install        fzf
 brew install        gh
 brew install        ghq
@@ -18,6 +20,7 @@ brew install        gnupg
 brew install --cask google-chrome
 brew install        hexyl
 brew install --cask jetbrains-toolbox
+brew install        lolcat
 brew install --cask mimestream
 brew install        neovim
 brew install        nodenv
