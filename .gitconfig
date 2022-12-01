@@ -7,6 +7,8 @@
 	ls = ls-files
 	s = status -sb
 	wd = diff --color-words
+[checkout]
+	workers = 0
 [color]
 	branch = auto
 	diff = auto
@@ -53,7 +55,7 @@
 [feature]
 	manyFiles = true
 [fetch]
-	parallel = 4
+	parallel = 0
 	prune = true
 [ghq]
 	root = ~/.ghq
@@ -70,7 +72,7 @@
 	followTags = true
 	autoSetupRemote = true
 [submodule]
-	fetchJobs = 4
+	fetchJobs = 0
 [tag]
 	gpgsign = true
 [user]
