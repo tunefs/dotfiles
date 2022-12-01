@@ -16,6 +16,7 @@ brew install        fzf
 brew install        gh
 brew install        ghq
 brew install --cask gitkraken
+brew install        git-delta
 brew install        gnupg
 brew install --cask google-chrome
 brew install        hexyl
