@@ -2,6 +2,7 @@ set clipboard+=unnamedplus
 set commentary
 set easymotion
 set noerrorbells
+set highlightedyank
 set ignorecase
 set incsearch
 set multiple-cursors
@@ -9,8 +10,9 @@ set smartcase
 set surround
 set visualbell
 inoremap <C-g> <ESC>
-cnoremap <C-g> <C-c>
-vnoremap <C-g> <C-c>
+cnoremap <C-g> <ESC>
+vnoremap <C-g> <ESC>
+nnoremap <C-g> <ESC>
 nnoremap [c :action VcsShowPrevChangeMarker<CR>
 nnoremap ]c :action VcsShowNextChangeMarker<CR>
 map <C-n>  <A-n>

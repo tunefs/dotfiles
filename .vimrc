@@ -83,7 +83,6 @@ Plug 'aklt/plantuml-syntax'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'easymotion/vim-easymotion'
-Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app && yarn install'}
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -248,6 +247,7 @@ if has("nvim")
   " autocmd TermOpen * startinsert
   autocmd TermOpen * setlocal nonumber
 "   highlight Whitespace guifg=#475C69
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
 else
   nnoremap <C-L> <Cmd>nohlsearch<Bar>diffupdate<CR><C-L>
 "   highlight SpecialKey guifg=#475C69

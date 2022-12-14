@@ -55,7 +55,7 @@ symbol = "  "
 
 [git_commit]
 only_detached = false
-# tag_disabled = false
+tag_disabled = false
 tag_symbol = " 炙"
 
 # [git_metrics]
@@ -116,8 +116,8 @@ symbol = " "
 [rust]
 symbol = " "
 
-# [shell]
-# disabled = false
+[shell]
+disabled = false
 
 # [status]
 # disabled = false
