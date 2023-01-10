@@ -117,12 +117,12 @@ module.exports = {
         macOptionSelectionMode: 'vertical',
         // Whether to use the WebGL renderer. Set it to false to use canvas-based
         // rendering (slower, but supports transparent backgrounds)
-        webGLRenderer: false,
+        webGLRenderer: true,
         // keypress required for weblink activation: [ctrl|alt|meta|shift]
         // todo: does not pick up config changes automatically, need to restart terminal :/
-        webLinksActivationKey: '',
+        webLinksActivationKey: 'meta',
         // if `false` (without backticks and without quotes), Hyper will use ligatures provided by some fonts
-        disableLigatures: true,
+        disableLigatures: false,
         // set to true to disable auto updates
         disableAutoUpdates: false,
         // set to true to enable screen reading apps (like NVDA) to read the contents of the terminal
@@ -135,13 +135,14 @@ module.exports = {
         opacity: 0.95,
         scrollback: 10000,
         hyperBorder: {
-            animate: {
-                duration: '8000'
-            },
-            borderColors: ['#00c070', '#0070c0'],
-            borderRadiusInner: '8px',
-            borderRadiusOuter: '8px',
-            borderWidth: '4px'
+            animate: false,
+            // animate: {
+            //     duration: '8000'
+            // },
+            // borderColors: ['#00c070', '#0070c0'],
+            borderRadiusInner: '6px',
+            borderRadiusOuter: '12px',
+            borderWidth: '6px'
         },
         paneNavigation: {
             inactivePaneOpacity: 0.7

@@ -107,7 +107,6 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'tyru/open-browser.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-" Plug 'brglng/vim-im-select'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 call plug#end()
@@ -123,8 +122,6 @@ let g:fern#renderer = 'nerdfont'
 let g:fern#renderer#nerdfont#indent_markers = 1
 let g:fzf_buffers_jump = 1
 let g:gitgutter_terminal_reports_focus = 0
-let g:im_select_default = 'com.apple.keylayout.ABC'
-" let g:im_select_get_im_cmd = ['im-select']
 let g:lightline = {
   \ 'colorscheme': 'dracula',
   \ 'active': {'left': [['mode', 'paste'],

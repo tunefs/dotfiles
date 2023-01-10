@@ -1,3 +1,4 @@
+(set-language-environment "Japanese")
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
@@ -18,7 +19,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(set-frame-parameter nil 'alpha 97)
+(set-frame-parameter nil 'alpha 95)
 (load-theme 'material t)
 (tool-bar-mode 0)
 ;(menu-bar-mode 0)
