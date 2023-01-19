@@ -5,7 +5,7 @@ add_newline = false
 
 [aws]
 symbol = " "
-disabled = true
+# disabled = true
 
 [aws.region_aliases]
 ap-northeast-1 = "TKY"
@@ -42,6 +42,11 @@ format = "祥[$duration]($style) "
 [conda]
 symbol = " "
 
+# [custom.inbash]
+# command = 'echo bash'
+# symbol = "🅱️ "
+# when = ''' test "$STARSHIP_SHELL" = "bash" '''
+
 [directory]
 #format = "📁[$path]($style)[$read_only]($read_only_style) "
 #fish_style_pwd_dir_length = 1
@@ -54,8 +59,8 @@ symbol = "  "
 #truncation_length = 4
 
 [git_commit]
-only_detached = false
-tag_disabled = false
+# only_detached = false
+# tag_disabled = false
 tag_symbol = " 炙"
 
 # [git_metrics]
@@ -116,8 +121,9 @@ symbol = " "
 [rust]
 symbol = " "
 
-[shell]
-disabled = false
+# [shell]
+# fish_indicator = ''
+# disabled = false
 
 # [status]
 # disabled = false
