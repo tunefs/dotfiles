@@ -117,12 +117,12 @@ module.exports = {
         macOptionSelectionMode: 'vertical',
         // Whether to use the WebGL renderer. Set it to false to use canvas-based
         // rendering (slower, but supports transparent backgrounds)
-        webGLRenderer: true,
+        webGLRenderer: false,
         // keypress required for weblink activation: [ctrl|alt|meta|shift]
         // todo: does not pick up config changes automatically, need to restart terminal :/
         webLinksActivationKey: 'meta',
         // if `false` (without backticks and without quotes), Hyper will use ligatures provided by some fonts
-        disableLigatures: false,
+        disableLigatures: true,
         // set to true to disable auto updates
         disableAutoUpdates: false,
         // set to true to enable screen reading apps (like NVDA) to read the contents of the terminal
@@ -131,6 +131,7 @@ module.exports = {
         preserveCWD: true,
         // for advanced config flags please refer to https://hyper.is/#cfg
 
+        windowSize: [1512, 912],
         modifierKeys: {altIsMeta: true},
         opacity: 0.95,
         scrollback: 10000,

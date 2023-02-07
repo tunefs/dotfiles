@@ -16,6 +16,7 @@
 	ui = auto
 [commit]
 	gpgsign = true
+	template = /Users/saito/.git.commit.template
 [core]
 	autocrlf = false
 	attributesfile = /Users/saito/.gitattributes
