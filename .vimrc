@@ -83,6 +83,8 @@ Plug 'aklt/plantuml-syntax'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'easymotion/vim-easymotion'
+" Plug 'Exafunction/codeium.vim'
+Plug 'github/copilot.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'

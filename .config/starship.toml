@@ -13,7 +13,7 @@ ap-northeast-1 = "TKY"
 #[battery]
 #full_symbol = "🔋"
 #charging_symbol = "⚡️"
-#discharging_symbol = "💀"
+#discharging_symbol = "🪫 "
 
 [[battery.display]]
 threshold = 50

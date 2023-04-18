@@ -30,6 +30,7 @@
 	untrackedcache = true
 [credential]
 	helper = store --file /Users/saito/.git-credentials
+	helper = osxkeychain
 [delta]
 	features = decorations
 	line-numbers = true

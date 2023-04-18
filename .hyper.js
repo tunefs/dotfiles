@@ -10,7 +10,7 @@ module.exports = {
         // default font size in pixels for all tabs
         fontSize: 13,
         // font family with optional fallbacks
-        fontFamily: '"JetBrainsMono Nerd Font Mono", "FiraCode Nerd Font Mono", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+        fontFamily: '"FiraCode Nerd Font Mono", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
         // default font weight: 'normal' or 'bold'
         fontWeight: 'normal',
         // font weight for bold characters: 'normal' or 'bold'
@@ -97,7 +97,9 @@ module.exports = {
         // by default `['--login']` will be used
         shellArgs: ['--login'],
         // for environment variables
-        env: {},
+        env: {
+            // TERM: 'kterm'
+        },
         // Supported Options:
         //  1. 'SOUND' -> Enables the bell as a sound
         //  2. false: turns off the bell
@@ -122,7 +124,7 @@ module.exports = {
         // todo: does not pick up config changes automatically, need to restart terminal :/
         webLinksActivationKey: 'meta',
         // if `false` (without backticks and without quotes), Hyper will use ligatures provided by some fonts
-        disableLigatures: true,
+        disableLigatures: false,
         // set to true to disable auto updates
         disableAutoUpdates: false,
         // set to true to enable screen reading apps (like NVDA) to read the contents of the terminal
