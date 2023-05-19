@@ -1,14 +1,17 @@
 #set diff-highlight = true
 #set commit-order = default
 set ignore-case = smart-case
+set line-graphics = utf-8
 set main-view = id date author:email-user,width=15 commit-title:yes,graph,refs,overflow=no
 set split-view-height = 80%
+set start-on-head = yes
+set truncation-delimiter = utf-8
 set vertical-split = no
 bind generic g move-first-line
 bind generic G move-last-line
 bind generic <Ctrl-f> scroll-page-down
 bind generic <Ctrl-b> scroll-page-up
-# color cursor black green
+# color cursor default magenta
 # color title-focus black blue bold
 # color title-blur black blue bold
 #color diff-add-highlight black green

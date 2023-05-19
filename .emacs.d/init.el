@@ -26,5 +26,5 @@
 (setq ns-command-modifier (quote meta))
 (global-set-key [(control ?h)] 'delete-backward-char)
 (global-set-key (kbd "S-SPC") 'set-mark-command)
-;(set-frame-font "FiraCode Nerd Font-13")
-(set-frame-font "JetBrainsMono Nerd Font Mono-13")
+(set-frame-font "FiraCode Nerd Font-13")
+;(set-frame-font "JetBrainsMono Nerd Font Mono-13")

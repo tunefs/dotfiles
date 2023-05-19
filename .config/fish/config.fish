@@ -43,12 +43,13 @@ ulimit -S -n 2048
 #alias docker='lima nerdctl'
 alias b=gbr
 alias g=gcd
+alias gu=gitui
 alias j=jobs
 alias l=less
-alias ls='exa -F'
-alias ll='exa -Fl'
-alias llb='exa -Fl --bytes'
-alias llt='exa -Fl --sort=date'
+alias ls='exa -F --icons'
+alias ll='exa -Fl --icons'
+alias llb='exa -Fl --bytes --icons'
+alias llt='exa -Fl --sort=date --icons'
 #alias lll='lsd -FlL'
 alias M='history merge'
 alias tiga='tig --all'
@@ -66,7 +67,7 @@ end
 
 function fish_command_not_found
     if type -q cowsay; and type -q lolcat
-        cowsay -f $HOME/.config/cowsay/genba.cow "ﾜｶﾘﾏｾﾝ: $argv[1]" | lolcat
+        cowsay -f $HOME/.config/cowsay/genba.cow "Bad command or file name: $argv[1]" | lolcat
     end
 end
 
