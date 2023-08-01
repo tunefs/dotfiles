@@ -1,6 +1,7 @@
 set clipboard+=unnamedplus
 set commentary
 set easymotion
+set matchit
 set noerrorbells
 set highlightedyank
 set ignorecase
@@ -9,14 +10,18 @@ set multiple-cursors
 set smartcase
 set surround
 set visualbell
+let mapleader = "\<Space>"
 inoremap <C-g> <ESC>
 cnoremap <C-g> <ESC>
 vnoremap <C-g> <ESC>
 nnoremap <C-g> <ESC>
-nnoremap [c :action VcsShowPrevChangeMarker<CR>
-nnoremap ]c :action VcsShowNextChangeMarker<CR>
+map [c <Action>(VcsShowPrevChangeMarker)
+map ]c <Action>(VcsShowNextChangeMarker)
+map <Leader>v <Action>(Vcs.Operations.Popup)
+map <Leader>r <Action>(RunMenu)
+map <Leader>R <Action>(RefactoringMenu)
+map <Leader>h <Action>(PopupHector)
 map <C-n>  <A-n>
 map <C-p>  <A-p>
 map <C-x>  <A-x>
 map g<C-n> g<A-n>
-let mapleader = "\<Space>"

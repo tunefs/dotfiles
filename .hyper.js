@@ -133,7 +133,7 @@ module.exports = {
         preserveCWD: true,
         // for advanced config flags please refer to https://hyper.is/#cfg
 
-        windowSize: [1512, 912],
+        windowSize: [1800, 1080],
         modifierKeys: {altIsMeta: true},
         opacity: 0.95,
         scrollback: 10000,
@@ -148,7 +148,7 @@ module.exports = {
             borderWidth: '6px'
         },
         paneNavigation: {
-            inactivePaneOpacity: 0.7
+            inactivePaneOpacity: 0.5
         },
     },
     // a list of plugins to fetch and install from npm

@@ -170,7 +170,7 @@ function! LightLineReadonly()
   if &filetype == 'help'
     return ''
   elseif &readonly
-    return ''
+    return '🔒'
     " return emoji#for('lock')
   else
     return ''
@@ -181,7 +181,7 @@ function! LightLineModified()
     return ''
   elseif &modified
     " return emoji#for('boom')
-    return ' '
+    return '📝'
   elseif &modifiable
     return ''
   else

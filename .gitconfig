@@ -1,3 +1,5 @@
+[include]
+	path = /Users/saito/.delta.themes
 [alias]
 	b = branch -vv
 	d = diff
@@ -6,6 +8,7 @@
 	lp = log -p
 	ls = ls-files
 	s = status -sb
+	ss = status
 	wd = diff --color-words
 [checkout]
 	workers = 0
@@ -32,27 +35,17 @@
 	helper = store --file /Users/saito/.git-credentials
 	helper = osxkeychain
 [delta]
-	features = decorations
+	features = calochortus-lyallii
+	light = false
 	line-numbers = true
+	navigate = true
 	syntax-theme = Dracula
 	tabs = 8
+	true-color = always
 	# theme = Nord
-[delta "decorations"]
-	# commit-decoration-style = yellow box ul
-	# file-decoration-style = yellow ul
-	# file-style = yellow
-	# hunk-header-decoration-style = yellow box
-	# minus-style                   = normal "#500000"
-	# minus-non-emph-style          = normal "#500000"
-	# minus-emph-style              = normal "#a00010"
-	# minus-empty-line-marker-style = normal "#500000"
-	# plus-style                    = syntax "#004000"
-	# plus-non-emph-style           = syntax "#004000"
-	# plus-emph-style               = syntax "#007000"
-	# plus-empty-line-marker-style  = syntax "#004000"
 [diff]
 	compactionHeuristic = true
-	# colorMoved = default
+	colorMoved = default
 	renames = true
 [feature]
 	manyFiles = true

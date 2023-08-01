@@ -7,13 +7,13 @@ add_newline = false
 symbol = "⛅️"
 # disabled = true
 
-[aws.region_aliases]
-ap-northeast-1 = "TKY"
+#[aws.region_aliases]
+#ap-northeast-1 = "TKY"
 
-#[battery]
-#full_symbol = "🔋"
-#charging_symbol = "⚡️"
-#discharging_symbol = "🪫"
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "🚨"
 
 [[battery.display]]
 threshold = 50
@@ -37,7 +37,7 @@ vimcmd_visual_symbol = "[](bold yellow)"
 # disabled = true
 
 [cmd_duration]
-format = "⏱️ [$duration]($style) "
+format = "⌛️[$duration]($style) "
 
 #[conda]
 # symbol = " "
@@ -54,14 +54,14 @@ format = "⏱️ [$duration]($style) "
 [docker_context]
 symbol = "🐳"
 
-[git_branch]
-symbol = "  "
+#[git_branch]
+#symbol = "🌵"
 #truncation_length = 4
 
 [git_commit]
 # only_detached = false
 # tag_disabled = false
-tag_symbol = " 🔖"
+tag_symbol = "🔖"
 
 # [git_metrics]
 # disabled = false

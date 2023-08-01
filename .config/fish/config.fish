@@ -6,15 +6,13 @@ set -x EDITOR vi
 #    --color=fg+:#4d4d4c,hl+:#d7005f
 #    --color=info:#4271ae,prompt:#8959a8,pointer:#d7005f
 #    --color=marker:#4271ae,spinner:#4271ae,header:#4271ae'
-set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border
-    --color=dark
-    --color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
-    --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7'
+set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border --color=dark --color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7'
 #set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border --color=dark'
 set -x FZF_CTRL_T_OPTS '--preview "bat --color=always --line-range :80 {}"'
 #set -x FZF_TMUX 1
 #set -x GOPATH $HOME/.go
-set -x GNUARMEMB_TOOLCHAIN_PATH /opt/homebrew
+# set -x GNUARMEMB_TOOLCHAIN_PATH /opt/homebrew
+set -x GNUARMEMB_TOOLCHAIN_PATH /Applications/ARM
 set -x LANG en_US.UTF-8
 set -x LESS iMQRsX
 set -x LESSCHARSET utf-8
@@ -25,10 +23,10 @@ set -x ZEPHYR_TOOLCHAIN_VARIANT gnuarmemb
 switch (arch)
     case 'i386*'
         set -x HOMEBREW /usr/local
-        set -x PATH $HOME/.bin $HOME/.local/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/sbin /usr/bin /sbin /bin $HOME/.fig/bin
+        set -x PATH $HOME/.bin $HOME/.local/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/sbin /usr/bin /sbin /bin $HOME/.fig/bin $GNUARMEMB_TOOLCHAIN_PATH/bin
     case 'arm*'
         set -x HOMEBREW /opt/homebrew
-        set -x PATH $HOME/.bin $HOME/.local/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin $HOME/.fig/bin
+        set -x PATH $HOME/.bin $HOME/.local/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin $HOME/.fig/bin $GNUARMEMB_TOOLCHAIN_PATH/bin
 end
 
 #eval (gdircolors -c)
@@ -42,6 +40,8 @@ ulimit -S -n 2048
 #alias b=bcd
 #alias docker='lima nerdctl'
 alias b=gbr
+alias df='df -h'
+alias du='du -h'
 alias g=gcd
 alias gu=gitui
 alias j=jobs
@@ -52,8 +52,8 @@ alias llb='exa -Fl --bytes --icons'
 alias llt='exa -Fl --sort=date --icons'
 #alias lll='lsd -FlL'
 alias M='history merge'
-alias tiga='tig --all'
-alias tree='exa -F --tree'
+alias t='tig --all'
+alias tree='exa -F --tree --icons'
 alias u=bcd
 alias xd=hexyl
 
