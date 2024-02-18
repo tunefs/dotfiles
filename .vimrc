@@ -207,7 +207,7 @@ nmap yp :<C-u>let @* = expand("%")<CR>
 nnoremap <silent> <ESC>u :<C-u>nohlsearch<CR>
 nnoremap <silent> <M-u> :<C-u>nohlsearch<CR>
 if !exists('g:vscode')
-  nnoremap <silent> <Leader>d :<C-u>Fern . -reveal=%<CR>
+  nnoremap <silent> <Leader>d :<C-u>Fern . -drawer -width=50 -toggle -reveal=%<CR>
   nnoremap <silent> <Leader>e :<C-u>Buffers<CR>
   nnoremap <silent> <Leader>f :<C-u>Rg! <C-r><C-w><CR>
   nnoremap <silent> <Leader>g :<C-u>GFiles<CR>
@@ -284,9 +284,9 @@ augroup END
 if has("nvim")
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"c", "cmake", "cpp", "css", "fish", "html", "javascript", "json", "kotlin", "make", "markdown", "ninja", "python", "typescript"},
+  ensure_installed = {"bitbake", "c", "cmake", "cpp", "css", "devicetree", "diff", "dockerfile", "fish", "git_config", "gitignore", "html", "javascript", "json", "kotlin", "make", "markdown", "ninja", "python", "typescript", "yaml"},
   sync_install = false,
-  ignore_install = { "javascript" },
+  auto_install = true,
   highlight = {
     enable = true,
     disable = {},

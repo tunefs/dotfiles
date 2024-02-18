@@ -1,18 +1,32 @@
 #set diff-highlight = true
 #set commit-order = default
+set git-colors = no
 set ignore-case = smart-case
 set line-graphics = utf-8
-set main-view = id date author:email-user,width=15 commit-title:yes,graph,refs,overflow=no
+set main-view = id date author:full,width=15 commit-title:yes,graph,refs,overflow=no
 set split-view-height = 80%
 set start-on-head = yes
 set truncation-delimiter = utf-8
 set vertical-split = no
 bind generic g move-first-line
-bind generic G move-last-line
 bind generic <Ctrl-f> scroll-page-down
 bind generic <Ctrl-b> scroll-page-up
-# color cursor default magenta
-# color title-focus black blue bold
-# color title-blur black blue bold
-#color diff-add-highlight black green
-#color diff-del-highlight black red
+bind generic * !@sh -c "/bin/echo -n %(commit) | pbcopy"
+bind diff G move-last-line
+
+# Override the default terminal colors to white on black.
+# color default         white   black
+color   cursor          black   green
+color   search-result   black   yellow
+# color author          green   black
+# color status          green   black
+color   line-number     red     black
+color   title-focus     black   yellow
+color   title-blur      black   magenta
+# Diff colors
+color diff-header       yellow  default
+color diff-index        blue    default
+color diff-chunk        magenta default
+color "Reported-by:"    green   default
+# View-specific color
+color tree.date         black   cyan    bold

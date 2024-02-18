@@ -6,13 +6,15 @@ set -x EDITOR vi
 #    --color=fg+:#4d4d4c,hl+:#d7005f
 #    --color=info:#4271ae,prompt:#8959a8,pointer:#d7005f
 #    --color=marker:#4271ae,spinner:#4271ae,header:#4271ae'
-set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border --color=dark --color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7'
+#set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border --color=dark --color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7'
+set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border --color=dark --color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
 #set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border --color=dark'
 set -x FZF_CTRL_T_OPTS '--preview "bat --color=always --line-range :80 {}"'
 #set -x FZF_TMUX 1
 #set -x GOPATH $HOME/.go
 # set -x GNUARMEMB_TOOLCHAIN_PATH /opt/homebrew
 set -x GNUARMEMB_TOOLCHAIN_PATH /Applications/ARM
+# set -x GNUARMEMB_TOOLCHAIN_PATH $HOME/.local/opt/zephyr-sdk-0.16.1/arm-zephyr-eabi
 set -x LANG en_US.UTF-8
 set -x LESS iMQRsX
 set -x LESSCHARSET utf-8
@@ -46,14 +48,14 @@ alias g=gcd
 alias gu=gitui
 alias j=jobs
 alias l=less
-alias ls='exa -F --icons'
-alias ll='exa -Fl --icons'
-alias llb='exa -Fl --bytes --icons'
-alias llt='exa -Fl --sort=date --icons'
-#alias lll='lsd -FlL'
+alias ls='lsd -F'
+alias ll='lsd -Fl'
+alias llb='lsd -Fl --size bytes'
+#alias llt='exa -Fl --sort=date --icons'
+alias lll='lsd -FlL'
 alias M='history merge'
 alias t='tig --all'
-alias tree='exa -F --tree --icons'
+alias tree='lsd -F --tree'
 alias u=bcd
 alias xd=hexyl
 
@@ -74,22 +76,23 @@ end
 starship init fish | source
 #source ~/.iterm2_shell_integration.fish
 
-function github-copilot_helper
-    set -l TMPFILE (mktemp)
-    trap 'rm -f $TMPFILE' EXIT
-    if github-copilot-cli $argv[1] "$argv[2..]" --shellout $TMPFILE
-        if [ -e "$TMPFILE" ]
-            set -l FIXED_CMD (cat $TMPFILE)
-            eval "$FIXED_CMD"
-        else
-            echo "Apologies! Extracting command failed"
-        end
-    else
-        return 1
-    end
-end
-alias ??='github-copilot_helper what-the-shell'
-alias git?='github-copilot_helper git-assist'
-alias gh?='github-copilot_helper gh-assist'
+#function github-copilot_helper
+#    set -l TMPFILE (mktemp)
+#    trap 'rm -f $TMPFILE' EXIT
+#    if github-copilot-cli $argv[1] "$argv[2..]" --shellout $TMPFILE
+#        if [ -e "$TMPFILE" ]
+#            set -l FIXED_CMD (cat $TMPFILE)
+#            eval "$FIXED_CMD"
+#        else
+#            echo "Apologies! Extracting command failed"
+#        end
+#    else
+#        return 1
+#    end
+#end
+##alias ??='github-copilot_helper what-the-shell'
+#alias sh?='github-copilot_helper what-the-shell'
+#alias git?='github-copilot_helper git-assist'
+#alias gh?='github-copilot_helper gh-assist'
 
 # vim: set expandtab shiftwidth=4:

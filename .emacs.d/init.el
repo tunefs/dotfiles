@@ -10,7 +10,7 @@
  '(inhibit-startup-screen t)
  '(make-backup-files nil)
  '(package-selected-packages
-   '(material-theme nordless-theme atom-one-dark-theme hybrid-reverse-theme nord-theme ##))
+   '(dracula-theme material-theme nordless-theme atom-one-dark-theme hybrid-reverse-theme nord-theme ##))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 (custom-set-faces

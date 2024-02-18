@@ -140,7 +140,7 @@ module.exports = {
         hyperBorder: {
             animate: false,
             // animate: {
-            //     duration: '8000'
+            //     duration: '3'
             // },
             // borderColors: ['#00c070', '#0070c0'],
             borderRadiusInner: '6px',
@@ -148,7 +148,7 @@ module.exports = {
             borderWidth: '6px'
         },
         paneNavigation: {
-            inactivePaneOpacity: 0.5
+            inactivePaneOpacity: 0.7
         },
     },
     // a list of plugins to fetch and install from npm

@@ -1,0 +1,6 @@
+[user]
+	email = atsunori.saito@nileworks.co.jp
+[commit]
+	gpgsign = false
+[tag]
+	gpgsign = false

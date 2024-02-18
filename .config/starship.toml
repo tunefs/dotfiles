@@ -4,7 +4,7 @@ add_newline = false
 # right_format = """$all"""
 
 [aws]
-symbol = "⛅️"
+# symbol = "⛅️"
 # disabled = true
 
 #[aws.region_aliases]
@@ -42,6 +42,11 @@ format = "⌛️[$duration]($style) "
 #[conda]
 # symbol = " "
 
+# [custom.fan]
+# command = 'fan'
+# symbol = 'fan '
+# when = true
+
 # [custom.inbash]
 # command = 'echo bash'
 # symbol = "🅱️ "
@@ -52,7 +57,7 @@ format = "⌛️[$duration]($style) "
 #fish_style_pwd_dir_length = 1
 
 [docker_context]
-symbol = "🐳"
+symbol = "🐳 "
 
 #[git_branch]
 #symbol = "🌵"
@@ -63,8 +68,8 @@ symbol = "🐳"
 # tag_disabled = false
 tag_symbol = "🔖"
 
-# [git_metrics]
-# disabled = false
+[git_metrics]
+disabled = false
 
 #[git_status]
 #conflicted = "🏳"
@@ -92,6 +97,8 @@ tag_symbol = "🔖"
 
 [jobs]
 symbol = "👻"
+symbol_threshold = 2
+disabled = true
 
 [memory_usage]
 # symbol = " "
