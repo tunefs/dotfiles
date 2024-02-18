@@ -22,20 +22,14 @@ set -x PAGER bat
 set -x PYENV_ROOT $HOME/.pyenv
 set -x ZEPHYR_TOOLCHAIN_VARIANT gnuarmemb
 
-switch (arch)
-    case 'i386*'
-        set -x HOMEBREW /usr/local
-        set -x PATH $HOME/.bin $HOME/.local/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/sbin /usr/bin /sbin /bin $HOME/.fig/bin $GNUARMEMB_TOOLCHAIN_PATH/bin
-    case 'arm*'
-        set -x HOMEBREW /opt/homebrew
-        set -x PATH $HOME/.bin $HOME/.local/bin $HOMEBREW/sbin $HOMEBREW/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin $HOME/.fig/bin $GNUARMEMB_TOOLCHAIN_PATH/bin
-end
-
 #eval (gdircolors -c)
+/opt/homebrew/bin/brew shellenv | source
 pyenv init --path | source
 pyenv init - | source
-eval (nodenv init - | source)
+nodenv init - | source
 zoxide init fish | source
+
+set -x PATH $HOME/.bin $PATH $GNUARMEMB_TOOLCHAIN_PATH/bin
 
 ulimit -S -n 2048
 

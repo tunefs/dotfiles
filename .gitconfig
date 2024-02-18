@@ -84,3 +84,5 @@
 	path = /Users/saito/.gitconfig.nileworks
 [includeIf "gitdir:/Volumes/Space/ghq/nileworks.github.com/nileworks/"]
 	path = /Users/saito/.gitconfig.nileworks
+[includeIf "gitdir:/Volumes/Space/ghq/localwork/nileworks/"]
+	path = /Users/saito/.gitconfig.nileworks
