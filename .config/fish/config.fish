@@ -48,6 +48,7 @@ alias llb='lsd -Fl --size bytes'
 #alias llt='exa -Fl --sort=date --icons'
 alias lll='lsd -FlL'
 alias M='history merge'
+alias md='glow -p'
 alias t='tig --all'
 alias tree='lsd -F --tree'
 alias u=bcd
@@ -66,6 +67,18 @@ function fish_command_not_found
         cowsay -f $HOME/.config/cowsay/genba.cow "Bad command or file name: $argv[1]" | lolcat
     end
 end
+
+function last_history_item
+    echo $history[1]
+end
+function last_history_item_word
+    echo (string split " " $history[1])[-1]
+end
+abbr -a !! --position anywhere --function last_history_item
+abbr -a '!$' --position anywhere --function last_history_item_word
+abbr -a H --position anywhere "| head"
+abbr -a L --position anywhere "| less"
+abbr -a T --position anywhere "| tail"
 
 starship init fish | source
 #source ~/.iterm2_shell_integration.fish

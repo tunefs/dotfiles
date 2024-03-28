@@ -240,6 +240,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 autocmd CmdwinEnter [:/?=] setlocal nonumber
 autocmd CmdwinEnter * map <buffer> <C-g> <C-c>
 autocmd FileType * set formatoptions-=o formatoptions-=r
+autocmd FileType cpp setlocal commentstring=//\ %s
 autocmd InsertLeave * set nopaste
 if has("nvim")
   unmap Y
