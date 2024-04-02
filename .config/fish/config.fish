@@ -29,7 +29,7 @@ pyenv init - | source
 nodenv init - | source
 zoxide init fish | source
 
-set -x PATH $HOME/.bin $PATH $GNUARMEMB_TOOLCHAIN_PATH/bin
+set -x PATH $HOME/.bin $PATH /usr/local/sbin /usr/local/bin $GNUARMEMB_TOOLCHAIN_PATH/bin
 
 ulimit -S -n 2048
 
