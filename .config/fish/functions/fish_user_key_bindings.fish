@@ -10,5 +10,4 @@ function fish_user_key_bindings
   bind -s --preset -M visual -m default \cg end-selection repaint-mode
   bind -s --preset -M replace_one -m default \cg cancel repaint-mode
   bind -s --preset -M replace -m default \cg cancel repaint-mode
-  fzf_key_bindings
 end

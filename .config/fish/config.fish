@@ -24,6 +24,7 @@ set -x ZEPHYR_TOOLCHAIN_VARIANT gnuarmemb
 
 #eval (gdircolors -c)
 /opt/homebrew/bin/brew shellenv | source
+fzf --fish | source
 pyenv init --path | source
 pyenv init - | source
 nodenv init - | source
