@@ -207,7 +207,7 @@ nmap yp :<C-u>let @* = expand("%")<CR>
 nnoremap <silent> <ESC>u :<C-u>nohlsearch<CR>
 nnoremap <silent> <M-u> :<C-u>nohlsearch<CR>
 if !exists('g:vscode')
-  nnoremap <silent> <Leader>d :<C-u>Fern . -drawer -width=50 -toggle -reveal=%<CR>
+  nnoremap <silent> <Leader>d :<C-u>Fern . -reveal=%<CR>
   nnoremap <silent> <Leader>e :<C-u>Buffers<CR>
   nnoremap <silent> <Leader>f :<C-u>Rg! <C-r><C-w><CR>
   nnoremap <silent> <Leader>g :<C-u>GFiles<CR>

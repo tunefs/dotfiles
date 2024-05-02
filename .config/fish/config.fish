@@ -1,3 +1,4 @@
+fish_config theme choose "Dracula Official"
 set -x HOMEBREW_NO_INSTALL_CLEANUP 1
 set -x EDITOR vi
 #set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border
@@ -57,7 +58,8 @@ alias xd=hexyl
 
 function fish_greeting
     if type -q fortune; type -q cowsay; and type -q lolcat
-        fortune | cowsay -f $HOME/.config/cowsay/genba.cow | lolcat
+        # fortune | cowsay -f $HOME/.config/cowsay/genba.cow | lolcat
+        figlet -f katakana 'mL!' | cowsay -n -f $HOME/.config/cowsay/genba.cow | lolcat
     else
         echo "Welcome."
     end
