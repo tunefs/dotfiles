@@ -48,7 +48,7 @@
 	colorMoved = default
 	renames = true
 [feature]
-	manyFiles = true
+	; manyFiles = true
 [fetch]
 	parallel = 0
 	prune = true

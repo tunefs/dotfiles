@@ -7,6 +7,7 @@ set highlightedyank
 set ignorecase
 set incsearch
 set multiple-cursors
+set scrolloff=5
 set smartcase
 set surround
 set visualbell

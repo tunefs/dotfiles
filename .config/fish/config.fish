@@ -66,8 +66,9 @@ function fish_greeting
 end
 
 function fish_command_not_found
-    if type -q cowsay; and type -q lolcat
-        cowsay -f $HOME/.config/cowsay/genba.cow "Bad command or file name: $argv[1]" | lolcat
+    if type -q figlet; and type -q cowsay; and type -q lolcat
+        figlet 'command not found' | cowsay -n -f $HOME/.config/cowsay/genba.cow | lolcat
+        # cowsay -f $HOME/.config/cowsay/genba.cow "Bad command or file name: $argv[1]" | lolcat
     end
 end
 
@@ -86,23 +87,6 @@ abbr -a T --position anywhere "| tail"
 starship init fish | source
 #source ~/.iterm2_shell_integration.fish
 
-#function github-copilot_helper
-#    set -l TMPFILE (mktemp)
-#    trap 'rm -f $TMPFILE' EXIT
-#    if github-copilot-cli $argv[1] "$argv[2..]" --shellout $TMPFILE
-#        if [ -e "$TMPFILE" ]
-#            set -l FIXED_CMD (cat $TMPFILE)
-#            eval "$FIXED_CMD"
-#        else
-#            echo "Apologies! Extracting command failed"
-#        end
-#    else
-#        return 1
-#    end
-#end
-##alias ??='github-copilot_helper what-the-shell'
-#alias sh?='github-copilot_helper what-the-shell'
-#alias git?='github-copilot_helper git-assist'
-#alias gh?='github-copilot_helper gh-assist'
+alias ??='q ai'
 
 # vim: set expandtab shiftwidth=4:
