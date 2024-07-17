@@ -4,3 +4,5 @@
 	gpgsign = false
 [tag]
 	gpgsign = false
+[credential "https://github.com"]
+	username = atsunori-saito

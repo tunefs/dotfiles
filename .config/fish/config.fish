@@ -30,6 +30,7 @@ pyenv init --path | source
 pyenv init - | source
 nodenv init - | source
 zoxide init fish | source
+direnv hook fish | source
 
 set -x PATH $HOME/.bin $PATH /usr/local/sbin /usr/local/bin $GNUARMEMB_TOOLCHAIN_PATH/bin
 
@@ -57,9 +58,11 @@ alias u=bcd
 alias xd=hexyl
 
 function fish_greeting
-    if type -q fortune; type -q cowsay; and type -q lolcat
+    # if type -q figlet; type -q cowsay; and type -q lolcat
         # fortune | cowsay -f $HOME/.config/cowsay/genba.cow | lolcat
-        figlet -f katakana 'mL!' | cowsay -n -f $HOME/.config/cowsay/genba.cow | lolcat
+        # figlet -f katakana 'mL!' | cowsay -n -f $HOME/.config/cowsay/genba.cow | lolcat
+    if type -q fastfetch
+        fastfetch
     else
         echo "Welcome."
     end

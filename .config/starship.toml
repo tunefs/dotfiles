@@ -97,7 +97,8 @@ tag_symbol = "🔖"
 
 [jobs]
 symbol = "👻"
-symbol_threshold = 2
+# symbol_threshold = 2
+# number_threshold = 2
 disabled = true
 
 [memory_usage]

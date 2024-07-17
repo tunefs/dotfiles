@@ -31,9 +31,16 @@
 	quotepath = false
 	safecrlf = warn
 	untrackedcache = true
+# [credential]
+# 	helper = store --file /Users/saito/.git-credentials
+# 	helper = osxkeychain
 [credential]
-	helper = store --file /Users/saito/.git-credentials
-	helper = osxkeychain
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://github.com"]
+	username = tunefs
+[credential "https://dev.azure.com"]
+	useHttpPath = true
 [delta]
 	features = calochortus-lyallii
 	light = false
@@ -47,8 +54,8 @@
 	compactionHeuristic = true
 	colorMoved = default
 	renames = true
-[feature]
-	; manyFiles = true
+# [feature]
+# 	manyFiles = true
 [fetch]
 	parallel = 0
 	prune = true
