@@ -1,5 +1,5 @@
 fish_config theme choose "Dracula Official"
-set -x HOMEBREW_NO_INSTALL_CLEANUP 1
+# set -x HOMEBREW_NO_INSTALL_CLEANUP 1
 set -x EDITOR vi
 #set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border
 #    --color=light
@@ -70,7 +70,7 @@ end
 
 function fish_command_not_found
     if type -q figlet; and type -q cowsay; and type -q lolcat
-        figlet 'command not found' | cowsay -n -f $HOME/.config/cowsay/genba.cow | lolcat
+        figlet -f katakana 'mL!' | cowsay -n -f $HOME/.config/cowsay/genba.cow | lolcat
         # cowsay -f $HOME/.config/cowsay/genba.cow "Bad command or file name: $argv[1]" | lolcat
     end
 end
