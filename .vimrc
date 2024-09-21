@@ -137,8 +137,6 @@ let g:lightline = {
   \              'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]},
   \ 'component': {'lineinfo': '%3l:%-2v'},
   \ 'component_function': {
-  \   'readonly': 'LightLineReadonly',
-  \   'modified': 'LightLineModified',
   \   'fugitive': 'LightLineFugitive',
   \   'skk_mode': 'statusline_skk#mode'
   \ },

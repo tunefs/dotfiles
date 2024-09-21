@@ -10,12 +10,16 @@
 	s = status -sb
 	ss = status
 	wd = diff --color-words
+[branch]
+	sort = -committerdate
 [checkout]
 	workers = 0
 [color]
 	branch = auto
 	diff = auto
 	status = auto
+	ui = auto
+[column]
 	ui = auto
 [commit]
 	gpgsign = true
@@ -59,11 +63,12 @@
 [fetch]
 	parallel = 0
 	prune = true
+	writeCommitGraph = true
 [ghq]
 	# root = ~/.ghq
 	root = /Volumes/Space/ghq
 [gpg]
-	program = /Users/saito/.bin/gpg
+	program = /opt/homebrew/bin/gpg
 [init]
 	defaultBranch = main
 [interactive]
