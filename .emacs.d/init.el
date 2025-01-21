@@ -10,7 +10,7 @@
  '(inhibit-startup-screen t)
  '(make-backup-files nil)
  '(package-selected-packages
-   '(dracula-theme material-theme nordless-theme atom-one-dark-theme hybrid-reverse-theme nord-theme ##))
+   '(dracula-theme ##))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -20,11 +20,13 @@
  ;; If there is more than one, they won't work right.
  )
 (set-frame-parameter nil 'alpha 95)
-(load-theme 'material t)
+(load-theme 'dracula t)
 (tool-bar-mode 0)
 ;(menu-bar-mode 0)
 (setq ns-command-modifier (quote meta))
 (global-set-key [(control ?h)] 'delete-backward-char)
 (global-set-key (kbd "S-SPC") 'set-mark-command)
-(set-frame-font "FiraCode Nerd Font-13")
+;(set-frame-font "FiraCode Nerd Font-13")
 ;(set-frame-font "JetBrainsMono Nerd Font Mono-13")
+(set-frame-font "Monaspace Argon-13")
+(setq-default line-spacing 3)

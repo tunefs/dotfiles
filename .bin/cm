@@ -1,0 +1,25 @@
+#!/bin/sh
+if [ `git diff --cached 2> /dev/null | wc -l` -le 0 ]; then
+  echo "No changes to commit"
+  exit 1
+fi
+msg_file=`mktemp /tmp/cm.XXXXXX`
+git diff --cached | gptme --non-interactive "Write a concise, meaningful commit message for this diff.
+
+Format: <type>: <subject>
+Where type is one of: feat, fix, docs, style, refactor, test, chore, build.
+
+Where subject is a short description less than 50 characters followed by a newline and a more detailed description.
+- Write concisely using an informal tone
+- List significant changes
+- Do not use specific names or files from the code
+- Do not use phrases like \"this commit\", \"this change\", etc.
+
+Save the commit message to this file: $msg_file"
+git commit -e -F "$msg_file"
+
+#git diff --cached | gptme --non-interactive 'Commit Messages must have a short description styled conventional commit type that is less than 50 characters followed by a newline and a more detailed description.
+#  - Write concisely using an informal tone
+#  - List significant changes
+#  - Do not use specific names or files from the code
+#  - Do not use phrases like "this commit", "this change", etc.'

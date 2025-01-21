@@ -19,6 +19,8 @@ set -x GNUARMEMB_TOOLCHAIN_PATH /Applications/ARM
 set -x LANG en_US.UTF-8
 set -x LESS iMQRsX
 set -x LESSCHARSET utf-8
+set -x NEOVIDE_FORK 1
+set -x NEOVIDE_FRAME transparent
 set -x PAGER bat
 set -x PYENV_ROOT $HOME/.pyenv
 set -x ZEPHYR_TOOLCHAIN_VARIANT gnuarmemb
@@ -43,6 +45,7 @@ alias df='df -h'
 alias du='du -h'
 alias g=gcd
 alias gu=gitui
+alias gvim=neovide
 alias j=jobs
 alias l=less
 alias ls='lsd -F'

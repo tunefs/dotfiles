@@ -43,8 +43,6 @@
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://github.com"]
 	username = tunefs
-[credential "https://dev.azure.com"]
-	useHttpPath = true
 [delta]
 	features = calochortus-lyallii
 	light = false
@@ -100,3 +98,5 @@
 	path = /Users/saito/.gitconfig.nileworks
 [includeIf "gitdir:/Volumes/Space/ghq/localwork/nileworks/"]
 	path = /Users/saito/.gitconfig.nileworks
+[credential "https://dev.azure.com"]
+	useHttpPath = true
