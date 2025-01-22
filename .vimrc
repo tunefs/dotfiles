@@ -112,9 +112,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tyru/open-browser.vim'
-" Plug 'vim-skk/skkeleton'
-" Plug 'vim-denops/denops.vim'
-" Plug 'yasunori0418/statusline_skk.vim'
+Plug 'vim-skk/skkeleton'
+Plug 'vim-denops/denops.vim'
+Plug 'yasunori0418/statusline_skk.vim'
 call plug#end()
 
 let mapleader = "\<Space>"
@@ -128,26 +128,9 @@ let g:fern#renderer = 'nerdfont'
 let g:fern#renderer#nerdfont#indent_markers = 1
 let g:fzf_buffers_jump = 1
 let g:gitgutter_terminal_reports_focus = 0
-" let g:lightline = {
-"   \ 'colorscheme': 'dracula',
-"   \ 'active': {'left': [['mode', 'paste', 'skk_mode'],
-"   \                     ['readonly', 'fugitive', 'filename', 'modified']],
-"   \            'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]},
-"   \ 'inactive': {'left': [['mode', 'paste'],
-"   \                       ['readonly', 'fugitive', 'filename', 'modified']],
-"   \              'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]},
-"   \ 'component': {'lineinfo': '%3l:%-2v'},
-"   \ 'component_function': {
-"   \   'fugitive': 'LightLineFugitive',
-"   \   'skk_mode': 'statusline_skk#mode'
-"   \ },
-"   \ 'separator': {'left': '', 'right': ''},
-"   \ 'subseparator': {'left': '', 'right': ''},
-"   \ 'tabline': {'right': []},
-"   \ }
 let g:lightline = {
   \ 'colorscheme': 'dracula',
-  \ 'active': {'left': [['mode', 'paste'],
+  \ 'active': {'left': [['mode', 'paste', 'skk_mode'],
   \                     ['readonly', 'fugitive', 'filename', 'modified']],
   \            'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]},
   \ 'inactive': {'left': [['mode', 'paste'],
@@ -155,7 +138,8 @@ let g:lightline = {
   \              'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]},
   \ 'component': {'lineinfo': '%3l:%-2v'},
   \ 'component_function': {
-  \   'fugitive': 'LightLineFugitive'
+  \   'fugitive': 'LightLineFugitive',
+  \   'skk_mode': 'statusline_skk#mode'
   \ },
   \ 'separator': {'left': '', 'right': ''},
   \ 'subseparator': {'left': '', 'right': ''},
@@ -250,23 +234,23 @@ imap <2-MiddleMouse> <Nop>
 imap <3-MiddleMouse> <Nop>
 imap <4-MiddleMouse> <Nop>
 
-" imap <C-j> <Plug>(skkeleton-enable)
-" cmap <C-j> <Plug>(skkeleton-enable)
-" call skkeleton#config({
-"   \ 'globalDictionaries': ['~/.skkeleton/SKK-JISYO.L'],
-"   \ 'userDictionary': '~/.skkeleton/userdic',
-"   \ 'eggLikeNewline': v:true,
-"   \ 'completionRankFile': '~/.skkeleton/rank.json'
-"   \ })
-" call skkeleton#register_keymap('input', "<C-g>", 'escape')
-" let g:lightline_skk_announce = v:true
-" call statusline_skk#option('display', {
-"   \ 'hiragana': 'あぁ󰗧',
-"   \ 'katakana': 'アァ󰗧',
-"   \ 'hankaku_katakana': 'ｱｧ󰗧',
-"   \ 'zenkaku_alphabet': 'Ａａ󰗧',
-"   \ 'alphabet': 'Aa󰗧',
-"   \ })
+imap <C-j> <Plug>(skkeleton-enable)
+cmap <C-j> <Plug>(skkeleton-enable)
+call skkeleton#config({
+  \ 'globalDictionaries': ['~/.skkeleton/SKK-JISYO.L'],
+  \ 'userDictionary': '~/.skkeleton/userdic',
+  \ 'eggLikeNewline': v:true,
+  \ 'completionRankFile': '~/.skkeleton/rank.json'
+  \ })
+call skkeleton#register_keymap('input', "<C-g>", 'escape')
+let g:lightline_skk_announce = v:true
+call statusline_skk#option('display', {
+  \ 'hiragana': 'あぁ󰗧',
+  \ 'katakana': 'アァ󰗧',
+  \ 'hankaku_katakana': 'ｱｧ󰗧',
+  \ 'zenkaku_alphabet': 'Ａａ󰗧',
+  \ 'alphabet': 'Aa󰗧',
+  \ })
 
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 autocmd CmdwinEnter [:/?=] setlocal nonumber
