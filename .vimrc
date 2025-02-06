@@ -170,15 +170,16 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 0
 if exists("g:neovide")
   set linespace=3
-  " set guifont=Monaspace\ Argon\ Var:h13
-  set guifont=FiraCode\ Nerd\ Font\ Mono\ Med:h13
+  " set guifont=Monaspace\ Krypton\ Var:h13
+  " set guifont=FiraCode\ Nerd\ Font\ Mono\ Med:h13
   let g:neovide_cursor_vfx_mode = "railgun"
   let g:neovide_input_macos_option_key_is_meta = 'both'
   let g:neovide_input_ime = v:false
   " let g:neovide_normal_opacity = 0.9
   " let g:neovide_show_border = v:true
   " let g:neovide_position_animation_length = 0.1
-  " let g:neovide_scroll_animation_length = 0.1
+  let g:neovide_scroll_animation_length = 0.2
+  let g:neovide_scroll_animation_far_lines = 2
 endif
 
 " colorscheme deep-space

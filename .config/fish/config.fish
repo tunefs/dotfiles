@@ -20,7 +20,7 @@ set -x LANG en_US.UTF-8
 set -x LESS iMQRsX
 set -x LESSCHARSET utf-8
 set -x NEOVIDE_FORK 1
-set -x NEOVIDE_FRAME transparent
+# set -x NEOVIDE_FRAME transparent
 set -x PAGER bat
 set -x PYENV_ROOT $HOME/.pyenv
 set -x ZEPHYR_TOOLCHAIN_VARIANT gnuarmemb
@@ -64,10 +64,13 @@ function fish_greeting
     # if type -q figlet; type -q cowsay; and type -q lolcat
         # fortune | cowsay -f $HOME/.config/cowsay/genba.cow | lolcat
         # figlet -f katakana 'mL!' | cowsay -n -f $HOME/.config/cowsay/genba.cow | lolcat
-    if type -q fastfetch
-        fastfetch
-    else
-        echo "Welcome."
+    # if type -q fastfetch
+    #     fastfetch
+    # else
+    #     echo "Welcome to Macintosh."
+    # end
+    if type -q figlet; and type -q lolcat
+        figlet -f rectangles "Welcome to Macintosh." | lolcat
     end
 end
 
