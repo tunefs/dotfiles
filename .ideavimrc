@@ -4,6 +4,7 @@ set easymotion
 set matchit
 set noerrorbells
 set highlightedyank
+set ideajoin
 set ignorecase
 set incsearch
 set multiple-cursors

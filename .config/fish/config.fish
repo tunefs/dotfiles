@@ -1,5 +1,6 @@
 fish_config theme choose "Dracula Official"
 # set -x HOMEBREW_NO_INSTALL_CLEANUP 1
+set -x ANDROID_HOME $HOME/Library/Android/sdk
 set -x EDITOR vi
 #set -x FZF_DEFAULT_OPTS '--cycle --no-mouse --inline-info --border
 #    --color=light
@@ -31,10 +32,11 @@ fzf --fish | source
 pyenv init --path | source
 pyenv init - | source
 nodenv init - | source
-zoxide init fish | source
 direnv hook fish | source
+zoxide init fish | source
+starship init fish | source
 
-set -x PATH $HOME/.bin $PATH /usr/local/sbin /usr/local/bin $GNUARMEMB_TOOLCHAIN_PATH/bin
+set -x PATH $HOME/.bin $PATH /usr/local/sbin /usr/local/bin $GNUARMEMB_TOOLCHAIN_PATH/bin $ANDROID_HOME/platform-tools
 
 ulimit -S -n 2048
 
@@ -59,16 +61,9 @@ alias t='tig --all'
 alias tree='lsd -F --tree'
 alias u=bcd
 alias xd=hexyl
+alias ??='q ai'
 
 function fish_greeting
-    # if type -q figlet; type -q cowsay; and type -q lolcat
-        # fortune | cowsay -f $HOME/.config/cowsay/genba.cow | lolcat
-        # figlet -f katakana 'mL!' | cowsay -n -f $HOME/.config/cowsay/genba.cow | lolcat
-    # if type -q fastfetch
-    #     fastfetch
-    # else
-    #     echo "Welcome to Macintosh."
-    # end
     if type -q figlet; and type -q lolcat
         figlet -f rectangles "Welcome to Macintosh." | lolcat
     end
@@ -92,10 +87,5 @@ abbr -a '!$' --position anywhere --function last_history_item_word
 abbr -a H --position anywhere "| head"
 abbr -a L --position anywhere "| less"
 abbr -a T --position anywhere "| tail"
-
-starship init fish | source
-#source ~/.iterm2_shell_integration.fish
-
-alias ??='q ai'
 
 # vim: set expandtab shiftwidth=4:

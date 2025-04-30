@@ -17,6 +17,7 @@ set directory=~/.vim/tmp
 set display+=lastline
 set encoding=utf-8
 set exrc
+" set fixeol
 set guioptions-=e
 set hidden
 set history=1000
@@ -124,9 +125,12 @@ let g:ackprg = 'ag --vimgrep'
 " let g:fzf_layout = {'window': 'tabnew'}
 let g:dracula_italic = 0
 let g:fern#default_hidden=1
+let g:fern#keepalt_on_edit=1
+let g:fern#keepjumps_on_edit=1
 let g:fern#renderer = 'nerdfont'
 let g:fern#renderer#nerdfont#indent_markers = 1
 let g:fzf_buffers_jump = 1
+let g:fzf_preview_window = ['hidden,right,50%,<70(up,40%)', 'ctrl-q']
 let g:gitgutter_terminal_reports_focus = 0
 let g:lightline = {
   \ 'colorscheme': 'dracula',
@@ -170,16 +174,15 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 0
 if exists("g:neovide")
   set linespace=3
-  " set guifont=Monaspace\ Krypton\ Var:h13
-  " set guifont=FiraCode\ Nerd\ Font\ Mono\ Med:h13
   let g:neovide_cursor_vfx_mode = "railgun"
   let g:neovide_input_macos_option_key_is_meta = 'both'
   let g:neovide_input_ime = v:false
-  " let g:neovide_normal_opacity = 0.9
-  " let g:neovide_show_border = v:true
-  " let g:neovide_position_animation_length = 0.1
   let g:neovide_scroll_animation_length = 0.2
   let g:neovide_scroll_animation_far_lines = 2
+  let g:neovide_padding_top = 10
+  let g:neovide_padding_bottom = 10
+  let g:neovide_padding_right = 10
+  let g:neovide_padding_left = 10
 endif
 
 " colorscheme deep-space

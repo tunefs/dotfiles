@@ -1,14 +1,17 @@
 command_timeout = 1000
-add_newline = false
-# format = """$character"""
-# right_format = """$all"""
 
-[aws]
-# symbol = "⛅️"
-# disabled = true
-
-#[aws.region_aliases]
-#ap-northeast-1 = "TKY"
+format = """
+[░▒▓](#a3aed2)\
+[  ](bg:#a3aed2 fg:#090c0c)\
+[](bg:#5a85dc fg:#a3aed2)\
+$directory\
+[](fg:#5a85dc bg:#394260)\
+$git_branch\
+$git_commit\
+$git_status\
+$env_var\
+[](fg:#394260 bg:#212736)\
+\n$character"""
 
 [battery]
 full_symbol = "🔋"
@@ -17,121 +20,34 @@ discharging_symbol = "🚨"
 
 [[battery.display]]
 threshold = 50
-#style = "bold red"
 
-#[c]
-# symbol = " "
-# disabled = true
+[directory]
+style = "fg:#e3e5e5 bg:#5a85dc"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
 
-[character]
-# success_symbol = "[](bold green)"
-# error_symbol = "[](bold red)"
-# vicmd_symbol = "[](bold green)"
-# vimcmd_symbol = "[](bold green)"
-# vimcmd_replace_one_symbol = "[](bold purple)"
-# vimcmd_replace_symbol = "[](bold purple)"
-# vimcmd_visual_symbol = "[](bold yellow)"
+# [directory.substitutions]
+# "Documents" = "󰈙 "
+# "Downloads" = " "
+# "Music" = " "
+# "Pictures" = " "
 
-#[cmake]
-# symbol = "喝"
-# disabled = true
+[env_var.ESP_IDF_VERSION]
+style = "bg:#394260"
+format = '[ESP [$env_value](fg:#5a85dc bg:#394260) ]($style)'
 
-[cmd_duration]
-format = "⌛️[$duration]($style) "
-
-#[conda]
-# symbol = " "
-
-# [custom.fan]
-# command = 'fan'
-# symbol = 'fan '
-# when = true
-
-# [custom.inbash]
-# command = 'echo bash'
-# symbol = "🅱️ "
-# when = ''' test "$STARSHIP_SHELL" = "bash" '''
-
-#[directory]
-#format = "📁[$path]($style)[$read_only]($read_only_style) "
-#fish_style_pwd_dir_length = 1
-
-[docker_context]
-symbol = "🐳 "
-
-#[git_branch]
-#symbol = "🌵"
-#truncation_length = 4
+[git_branch]
+symbol = ""
+style = "bg:#394260"
+format = '[[ $symbol $branch ](fg:#5a85dc bg:#394260)]($style)'
 
 [git_commit]
-# only_detached = false
-# tag_disabled = false
 tag_symbol = "🔖"
+style = "bg:#394260"
+format = '[[\($hash$tag\) ](fg:#e0665a bg:#394260)]($style)'
 
-# [git_metrics]
-# disabled = false
-
-#[git_status]
-#conflicted = "🏳"
-#ahead = "🏎💨"
-#behind = "😰"
-#diverged = "😵"
-#untracked = "❓"
-#stashed = "📦"
-#modified = "📝"
-#staged.value = "++"
-#staged.style = "green"
-#staged_count.enabled = true
-#staged_count.style = "green"
-#renamed = "👅"
-#deleted = "🗑"
-
-#[golang]
-# symbol = " "
-
-#[hg_branch]
-# symbol = " "
-
-#[java]
-# symbol = " "
-
-[jobs]
-symbol = "👻"
-# symbol_threshold = 2
-# number_threshold = 2
-disabled = true
-
-[memory_usage]
-# symbol = " "
-disabled = false
-# threshold = 80
-
-# [line_break]
-# disabled = true
-
-#[nodejs]
-# symbol = " "
-
-#[package]
-# symbol = " "
-
-#[php]
-# symbol = " "
-
-#[python]
-# symbol = " "
-# pyenv_version_name = true
-# disabled = true
-
-#[ruby]
-# symbol = " "
-
-#[rust]
-# symbol = " "
-
-# [shell]
-# fish_indicator = ''
-# disabled = false
-
-# [status]
-# disabled = false
+[git_status]
+style = "bg:#394260"
+format = '[[($all_status$ahead_behind )](fg:#e0665a bg:#394260)]($style)'
+# format = '([\[$all_status$ahead_behind\]](fg:#e0665a bg:#394260))($style)'

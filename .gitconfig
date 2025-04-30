@@ -24,6 +24,7 @@
 [commit]
 	gpgsign = true
 	# template = /Users/saito/.git.commit.template
+	verbose = true
 [core]
 	autocrlf = false
 	attributesfile = /Users/saito/.gitattributes
@@ -43,6 +44,8 @@
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://github.com"]
 	username = tunefs
+[credential "https://dev.azure.com"]
+	useHttpPath = true
 [delta]
 	features = calochortus-lyallii
 	light = false
@@ -53,20 +56,26 @@
 	true-color = always
 	# theme = Nord
 [diff]
+	algorithm = histogram
 	compactionHeuristic = true
-	colorMoved = default
+	colorMoved = plain
+	mnemonicPrefix = true
 	renames = true
 # [feature]
 # 	manyFiles = true
 [fetch]
+	all = true
 	parallel = 0
 	prune = true
+	pruneTags = true
 	writeCommitGraph = true
 [ghq]
 	# root = ~/.ghq
 	root = /Volumes/Space/ghq
 [gpg]
 	program = /opt/homebrew/bin/gpg
+[help]
+	autocorrect = prompt
 [init]
 	defaultBranch = main
 [interactive]
@@ -78,13 +87,17 @@
 	followTags = true
 	autoSetupRemote = true
 [rebase]
-	autostash = true
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
 [rerere]
+	autoupdate = true
 	enabled = true
 [submodule]
 	fetchJobs = 0
 [tag]
 	gpgsign = true
+	sort = version:refname
 [user]
 	name = Atsunori Saito
 	email = sai@yedo.com
@@ -98,5 +111,5 @@
 	path = /Users/saito/.gitconfig.nileworks
 [includeIf "gitdir:/Volumes/Space/ghq/localwork/nileworks/"]
 	path = /Users/saito/.gitconfig.nileworks
-[credential "https://dev.azure.com"]
-	useHttpPath = true
+[includeIf "gitdir:/Volumes/Space/ghq/github.com/hvd-nileworks/"]
+	path = /Users/saito/.gitconfig.nileworks

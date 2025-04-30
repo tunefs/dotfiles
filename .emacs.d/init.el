@@ -28,5 +28,5 @@
 (global-set-key (kbd "S-SPC") 'set-mark-command)
 ;(set-frame-font "FiraCode Nerd Font-13")
 ;(set-frame-font "JetBrainsMono Nerd Font Mono-13")
-(set-frame-font "Monaspace Argon-13")
+(set-frame-font "Monaspace Krypton-13")
 (setq-default line-spacing 3)
