@@ -5,6 +5,7 @@
 	d = diff
 	dc = diff --cached
 	l = log
+	ll = log --oneline --graph --all
 	lp = log -p
 	ls = ls-files
 	s = status -sb
@@ -23,7 +24,6 @@
 	ui = auto
 [commit]
 	gpgsign = true
-	# template = /Users/saito/.git.commit.template
 	verbose = true
 [core]
 	autocrlf = false
@@ -80,6 +80,8 @@
 	defaultBranch = main
 [interactive]
 	diffFilter = delta --color-only
+[merge]
+	conflictStyle = zdiff3
 [pull]
 	rebase = false
 [push]
@@ -101,8 +103,6 @@
 [user]
 	name = Atsunori Saito
 	email = sai@yedo.com
-	#email = atsunori.saito@nileworks.co.jp
-	#email = atsunori.saito@fpvrobotics.com
 	# signingkey = 1BD68FE00A98776CB2F1D8568F60FAAE34329E5E
 	signingkey = 8F60FAAE34329E5E
 [includeIf "gitdir:/Volumes/Space/ghq/github.com/nileworks/"]

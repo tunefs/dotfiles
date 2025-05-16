@@ -12,6 +12,8 @@ bind generic g move-first-line
 bind generic <Ctrl-f> scroll-page-down
 bind generic <Ctrl-b> scroll-page-up
 bind generic * !@sh -c "/bin/echo -n %(commit) | pbcopy"
+# bind generic <Ctrl-j> scroll-left
+# bind generic <Ctrl-k> scroll-right
 bind diff G move-last-line
 bind status C !cm
 

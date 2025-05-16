@@ -24,7 +24,11 @@ set history=1000
 set hlsearch
 set ignorecase
 set incsearch
-set laststatus=2
+if has("nvim")
+  set laststatus=3
+else
+  set laststatus=2
+endif
 set lazyredraw
 " set list
 set listchars=eol:↲,tab:↳\ ,space:∙,trail:␣

@@ -58,6 +58,7 @@ alias lll='lsd -FlL'
 alias M='history merge'
 alias md='glow -p'
 alias t='tig --all'
+alias tailscale=/Applications/Tailscale.app/Contents/MacOS/Tailscale
 alias tree='lsd -F --tree'
 alias u=bcd
 alias xd=hexyl
