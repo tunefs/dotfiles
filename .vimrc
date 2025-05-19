@@ -177,7 +177,7 @@ let g:surround_no_insert_mappings = 1
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 0
 if exists("g:neovide")
-  set linespace=3
+  set linespace=4
   let g:neovide_cursor_vfx_mode = "railgun"
   let g:neovide_input_macos_option_key_is_meta = 'both'
   let g:neovide_input_ime = v:false
@@ -292,7 +292,17 @@ command! -bang -nargs=* Ag
   \                 <bang>0)
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-command T4 set shiftwidth=4 expandtab
+function! s:gcd(dir)
+  if empty(a:dir)
+    return
+  endif
+  let l:path = system('ghq root')->trim() . '/' . a:dir
+  execute 'cd' fnameescape(l:path)
+endfunction
+command! -bang -nargs=? GCD call fzf#run({
+  \ 'source': 'ghq list',
+  \ 'sink': function('s:gcd')
+  \ })
 
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
